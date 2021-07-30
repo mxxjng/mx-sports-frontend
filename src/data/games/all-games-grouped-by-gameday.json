@@ -1,0 +1,1552 @@
+{
+  "allgames": {
+    "1": [
+      {
+        "id": "PWCC2101",
+        "date": "6-19-2021",
+        "gameday": 1,
+        "homeTeam": {
+          "id": "PW",
+          "logo": "https://imgur.com/RfgCanW.png",
+          "name": "Panthers Wroclaw",
+          "shortName": "Panthers"
+        },
+        "guestTeam": {
+          "id": "CC",
+          "logo": "https://imgur.com/je8mwHO.png",
+          "name": "Cologne Centurions",
+          "shortName": "Centurions"
+        },
+        "homeScore": 55,
+        "guestScore": 39,
+        "time": "18:00",
+        "location": "Wroclaw, Poland",
+        "stadium": "Stadion Olimpijski",
+        "externalGameData": true,
+        "started": true,
+        "finished": true,
+        "season": "21",
+        "scores": {
+          "0": [
+            {
+              "id": "000:00CC",
+              "homeScore": 14,
+              "guestScore": 7,
+              "quater": 0,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "N. Aarass" }
+            }
+          ],
+          "1": [
+            {
+              "id": "100:00PW",
+              "homeScore": 7,
+              "guestScore": 0,
+              "quater": 1,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "PW",
+                "logo": "https://imgur.com/RfgCanW.png"
+              },
+              "scorer": { "name": "J. Mazan" }
+            },
+            {
+              "id": "100:00PW",
+              "homeScore": 14,
+              "guestScore": 0,
+              "quater": 1,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "PW",
+                "logo": "https://imgur.com/RfgCanW.png"
+              },
+              "scorer": { "name": "D. Robinson" }
+            }
+          ],
+          "2": [
+            {
+              "id": "200:00PW",
+              "homeScore": 21,
+              "guestScore": 7,
+              "quater": 2,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "PW",
+                "logo": "https://imgur.com/RfgCanW.png"
+              },
+              "scorer": { "name": "P. Pasqualini" }
+            },
+            {
+              "id": "200:00CC",
+              "homeScore": 21,
+              "guestScore": 14,
+              "quater": 2,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "C. Ezeala" }
+            }
+          ],
+          "3": [
+            {
+              "id": "300:00PW",
+              "homeScore": 28,
+              "guestScore": 14,
+              "quater": 3,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "PW",
+                "logo": "https://imgur.com/RfgCanW.png"
+              },
+              "scorer": { "name": "P. Banat" }
+            },
+            {
+              "id": "300:00CC",
+              "homeScore": 28,
+              "guestScore": 21,
+              "quater": 3,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "M. London" }
+            },
+            {
+              "id": "300:00PW",
+              "homeScore": 31,
+              "guestScore": 21,
+              "quater": 3,
+              "time": "00:00",
+              "type": "FG",
+              "scoringTeam": {
+                "id": "PW",
+                "logo": "https://imgur.com/RfgCanW.png"
+              },
+              "scorer": { "name": "D. Panczyszyn" }
+            },
+            {
+              "id": "300:00PW",
+              "homeScore": 38,
+              "guestScore": 21,
+              "quater": 3,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "PW",
+                "logo": "https://imgur.com/RfgCanW.png"
+              },
+              "scorer": { "name": "W. Zieba" }
+            },
+            {
+              "id": "300:00CC",
+              "homeScore": 38,
+              "guestScore": 27,
+              "quater": 3,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "N. Aarass" }
+            }
+          ],
+          "4": [
+            {
+              "id": "400:00CC",
+              "homeScore": 38,
+              "guestScore": 33,
+              "quater": 4,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "M. London" }
+            },
+            {
+              "id": "400:00PW",
+              "homeScore": 45,
+              "guestScore": 33,
+              "quater": 4,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "PW",
+                "logo": "https://imgur.com/RfgCanW.png"
+              },
+              "scorer": { "name": "P. Banat" }
+            },
+            {
+              "id": "400:00PW",
+              "homeScore": 48,
+              "guestScore": 33,
+              "quater": 4,
+              "time": "00:00",
+              "type": "FG",
+              "scoringTeam": {
+                "id": "PW",
+                "logo": "https://imgur.com/RfgCanW.png"
+              },
+              "scorer": { "name": "D. Panczyszyn" }
+            },
+            {
+              "id": "400:00CC",
+              "homeScore": 48,
+              "guestScore": 39,
+              "quater": 4,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "M. London" }
+            },
+            {
+              "id": "400:00PW",
+              "homeScore": 55,
+              "guestScore": 39,
+              "quater": 4,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "PW",
+                "logo": "https://imgur.com/RfgCanW.png"
+              },
+              "scorer": { "name": "J. Mazan" }
+            }
+          ]
+        }
+      },
+      {
+        "id": "BDSS2101",
+        "date": "6-19-2021",
+        "gameday": 1,
+        "homeTeam": {
+          "id": "BD",
+          "logo": "https://imgur.com/9rf27qP.png",
+          "name": "Barcelona Dragons",
+          "shortName": "Dragons"
+        },
+        "guestTeam": {
+          "id": "SS",
+          "logo": "https://imgur.com/n0nGO0W.png",
+          "name": "Stuttgart Surge",
+          "shortName": "Surge"
+        },
+        "homeScore": 17,
+        "guestScore": 21,
+        "time": "19:00",
+        "location": "Barcelona",
+        "stadium": "Camp Municipal Reus",
+        "externalGameData": true,
+        "started": true,
+        "finished": true,
+        "season": "21",
+        "scores": {
+          "2": [
+            {
+              "id": "210:30BD",
+              "homeScore": 8,
+              "guestScore": 0,
+              "quater": 2,
+              "time": "10:30",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BD",
+                "logo": "https://imgur.com/9rf27qP.png"
+              },
+              "scorer": { "name": "A. Monton" }
+            },
+            {
+              "id": "209:15SS",
+              "homeScore": 8,
+              "guestScore": 6,
+              "quater": 2,
+              "time": "09:15",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "SS",
+                "logo": "https://imgur.com/n0nGO0W.png"
+              },
+              "scorer": { "name": "L. Geyer" }
+            },
+            {
+              "id": "202:10BD",
+              "homeScore": 10,
+              "guestScore": 6,
+              "quater": 2,
+              "time": "02:10",
+              "type": "SAF",
+              "scoringTeam": {
+                "id": "BD",
+                "logo": "https://imgur.com/9rf27qP.png"
+              },
+              "scorer": { "name": "Team" }
+            }
+          ],
+          "3": [
+            {
+              "id": "310:21SS",
+              "homeScore": 10,
+              "guestScore": 14,
+              "quater": 3,
+              "time": "10:21",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "SS",
+                "logo": "https://imgur.com/n0nGO0W.png"
+              },
+              "scorer": { "name": "J. Wright" }
+            }
+          ],
+          "4": [
+            {
+              "id": "403:12BD",
+              "homeScore": 17,
+              "guestScore": 14,
+              "quater": 4,
+              "time": "03:12",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BD",
+                "logo": "https://imgur.com/9rf27qP.png"
+              },
+              "scorer": { "name": "A. Monton" }
+            },
+            {
+              "id": "401:42SS",
+              "homeScore": 17,
+              "guestScore": 21,
+              "quater": 4,
+              "time": "01:42",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "SS",
+                "logo": "https://imgur.com/n0nGO0W.png"
+              },
+              "scorer": { "name": "P. Floeser" }
+            }
+          ]
+        }
+      },
+      {
+        "id": "BTLK2101",
+        "date": "6-20-2021",
+        "gameday": 1,
+        "homeTeam": {
+          "id": "BT",
+          "logo": "https://imgur.com/IULeISd.png",
+          "name": "Berlin Thunder",
+          "shortName": "Thunder"
+        },
+        "guestTeam": {
+          "id": "LK",
+          "logo": "https://imgur.com/QhJTTds.png",
+          "name": "Leipzig Kings",
+          "shortName": "Kings"
+        },
+        "homeScore": 27,
+        "guestScore": 37,
+        "time": "15:00",
+        "location": "Berlin",
+        "stadium": "Stadion am Wurfplatz",
+        "externalGameData": true,
+        "started": true,
+        "finished": true,
+        "season": "21",
+        "scores": {
+          "1": [
+            {
+              "id": "111:38BT",
+              "homeScore": 6,
+              "guestScore": 0,
+              "quater": 1,
+              "time": "11:38",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BT",
+                "logo": "https://imgur.com/IULeISd.png"
+              },
+              "scorer": { "name": "T. Ndongo" }
+            },
+            {
+              "id": "111:38LK",
+              "homeScore": 6,
+              "guestScore": 2,
+              "quater": 1,
+              "time": "11:38",
+              "type": "PAT",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "A. Jalloh" }
+            },
+            {
+              "id": "106:39BT",
+              "homeScore": 9,
+              "guestScore": 2,
+              "quater": 1,
+              "time": "06:39",
+              "type": "FG",
+              "scoringTeam": {
+                "id": "BT",
+                "logo": "https://imgur.com/IULeISd.png"
+              },
+              "scorer": { "name": "L. Rieger" }
+            },
+            {
+              "id": "100:03LK",
+              "homeScore": 9,
+              "guestScore": 9,
+              "quater": 1,
+              "time": "00:03",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "T. Knuettel" }
+            }
+          ],
+          "2": [
+            {
+              "id": "210:14LK",
+              "homeScore": 9,
+              "guestScore": 15,
+              "quater": 2,
+              "time": "10:14",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "T. Knuettel" }
+            },
+            {
+              "id": "204:14LK",
+              "homeScore": 9,
+              "guestScore": 22,
+              "quater": 2,
+              "time": "04:14",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "Y. Omi" }
+            },
+            {
+              "id": "201:49BT",
+              "homeScore": 15,
+              "guestScore": 22,
+              "quater": 2,
+              "time": "01:49",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BT",
+                "logo": "https://imgur.com/IULeISd.png"
+              },
+              "scorer": { "name": "B. Zerbe" }
+            },
+            {
+              "id": "201:41LK",
+              "homeScore": 15,
+              "guestScore": 29,
+              "quater": 2,
+              "time": "01:41",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "A. Jalloh" }
+            }
+          ],
+          "3": [
+            {
+              "id": "308:40LK",
+              "homeScore": 15,
+              "guestScore": 31,
+              "quater": 3,
+              "time": "08:40",
+              "type": "SAF",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "TEAM" }
+            },
+            {
+              "id": "302:18LK",
+              "homeScore": 15,
+              "guestScore": 37,
+              "quater": 3,
+              "time": "02:18",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "J. Templar" }
+            }
+          ],
+          "4": [
+            {
+              "id": "405:21BT",
+              "homeScore": 21,
+              "guestScore": 37,
+              "quater": 4,
+              "time": "05:21",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BT",
+                "logo": "https://imgur.com/IULeISd.png"
+              },
+              "scorer": { "name": "S. Jones" }
+            },
+            {
+              "id": "400:11BT",
+              "homeScore": 27,
+              "guestScore": 37,
+              "quater": 4,
+              "time": "00:11",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BT",
+                "logo": "https://imgur.com/IULeISd.png"
+              },
+              "scorer": { "name": "S. Jones" }
+            }
+          ]
+        }
+      },
+      {
+        "id": "HDFG2101",
+        "date": "6-20-2021",
+        "gameday": 1,
+        "homeTeam": {
+          "id": "HD",
+          "logo": "https://imgur.com/abxBs9Y.png",
+          "name": "Hamburg Sea Devils",
+          "shortName": "Sea Devils"
+        },
+        "guestTeam": {
+          "id": "FG",
+          "logo": "https://imgur.com/ry0LFh7.png",
+          "name": "Frankfurt Galaxy",
+          "shortName": "Galaxy"
+        },
+        "homeScore": 17,
+        "guestScore": 15,
+        "time": "15:00",
+        "location": "Hamburg",
+        "stadium": "Stadion Hoheluft",
+        "externalGameData": true,
+        "started": true,
+        "finished": true,
+        "season": "21",
+        "scores": {
+          "2": [
+            {
+              "id": "213:19FG",
+              "homeScore": 0,
+              "guestScore": 3,
+              "quater": 2,
+              "time": "13:19",
+              "type": "FG",
+              "scoringTeam": {
+                "id": "FG",
+                "logo": "https://imgur.com/ry0LFh7.png"
+              },
+              "scorer": { "name": "L. Sack" }
+            },
+            {
+              "id": "207:30HD",
+              "homeScore": 7,
+              "guestScore": 3,
+              "quater": 2,
+              "time": "07:30",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "HD",
+                "logo": "https://imgur.com/abxBs9Y.png"
+              },
+              "scorer": { "name": "A. Mati" }
+            },
+            {
+              "id": "200:13FG",
+              "homeScore": 7,
+              "guestScore": 9,
+              "quater": 2,
+              "time": "00:13",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "FG",
+                "logo": "https://imgur.com/ry0LFh7.png"
+              },
+              "scorer": { "name": "G. Adams" }
+            }
+          ],
+          "3": [
+            {
+              "id": "300:00HD",
+              "homeScore": 14,
+              "guestScore": 9,
+              "quater": 3,
+              "time": "00:00",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "HD",
+                "logo": "https://imgur.com/abxBs9Y.png"
+              },
+              "scorer": { "name": "A. Botella M." }
+            }
+          ],
+          "4": [
+            {
+              "id": "407:49FG",
+              "homeScore": 14,
+              "guestScore": 15,
+              "quater": 4,
+              "time": "07:49",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "FG",
+                "logo": "https://imgur.com/ry0LFh7.png"
+              },
+              "scorer": { "name": "H. Schwarz" }
+            },
+            {
+              "id": "400:02HD",
+              "homeScore": 17,
+              "guestScore": 15,
+              "quater": 4,
+              "time": "00:02",
+              "type": "FG",
+              "scoringTeam": {
+                "id": "HD",
+                "logo": "https://imgur.com/abxBs9Y.png"
+              },
+              "scorer": { "name": "P. Andersen" }
+            }
+          ]
+        }
+      }
+    ],
+    "2": [
+      {
+        "id": "PWLK2102",
+        "date": "6-26-2021",
+        "gameday": 2,
+        "homeTeam": {
+          "id": "PW",
+          "name": "Panthers Wroclaw",
+          "logo": "https://imgur.com/RfgCanW.png",
+          "shortName": "Panthers"
+        },
+        "guestTeam": {
+          "id": "LK",
+          "name": "Leipzig Kings",
+          "logo": "https://imgur.com/QhJTTds.png",
+          "shortName": "Kings"
+        },
+        "homeScore": 54,
+        "guestScore": 28,
+        "time": "18:00",
+        "location": "Wroclaw, Poland",
+        "stadium": "Stadion Olimpijski",
+        "started": true,
+        "finished": true,
+        "scores": {}
+      },
+      {
+        "id": "CCBD2102",
+        "date": "6-27-2021",
+        "gameday": 2,
+        "homeTeam": {
+          "id": "CC",
+          "logo": "https://imgur.com/je8mwHO.png",
+          "name": "Cologne Centurions",
+          "shortName": "Centurions"
+        },
+        "guestTeam": {
+          "id": "BD",
+          "logo": "https://imgur.com/9rf27qP.png",
+          "name": "Barcelona Dragons",
+          "shortName": "Dragons"
+        },
+        "homeScore": 40,
+        "guestScore": 12,
+        "time": "15:00",
+        "location": "Cologne",
+        "stadium": "Suedstadion Koeln",
+        "externalGameData": true,
+        "started": true,
+        "finished": true,
+        "season": "21",
+        "scores": {
+          "2": [
+            {
+              "id": "214:53CC",
+              "homeScore": 7,
+              "guestScore": 0,
+              "quater": 2,
+              "time": "14:53",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "M. London" }
+            },
+            {
+              "id": "200:06CC",
+              "homeScore": 14,
+              "guestScore": 0,
+              "quater": 2,
+              "time": "00:06",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "Q. Pounds" }
+            }
+          ],
+          "3": [
+            {
+              "id": "311:32BD",
+              "homeScore": 14,
+              "guestScore": 6,
+              "quater": 3,
+              "time": "11:32",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BD",
+                "logo": "https://imgur.com/9rf27qP.png"
+              },
+              "scorer": { "name": "M. Flores" }
+            },
+            {
+              "id": "311:03CC",
+              "homeScore": 21,
+              "guestScore": 6,
+              "quater": 3,
+              "time": "11:03",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "M. London" }
+            },
+            {
+              "id": "303:58CC",
+              "homeScore": 27,
+              "guestScore": 6,
+              "quater": 3,
+              "time": "03:58",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "J. Weinreich" }
+            },
+            {
+              "id": "301:10BD",
+              "homeScore": 27,
+              "guestScore": 12,
+              "quater": 3,
+              "time": "01:10",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BD",
+                "logo": "https://imgur.com/9rf27qP.png"
+              },
+              "scorer": { "name": "R. Bertellin" }
+            },
+            {
+              "id": "300:07CC",
+              "homeScore": 33,
+              "guestScore": 12,
+              "quater": 3,
+              "time": "00:07",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "M. London" }
+            }
+          ],
+          "4": [
+            {
+              "id": "409:42CC",
+              "homeScore": 40,
+              "guestScore": 12,
+              "quater": 4,
+              "time": "09:42",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "M. London" }
+            }
+          ]
+        }
+      },
+      {
+        "id": "SSFG2102",
+        "date": "6-27-2021",
+        "gameday": 2,
+        "homeTeam": {
+          "id": "SS",
+          "logo": "https://imgur.com/n0nGO0W.png",
+          "name": "Stuttgart Surge",
+          "shortName": "Surge"
+        },
+        "guestTeam": {
+          "id": "FG",
+          "logo": "https://imgur.com/ry0LFh7.png",
+          "name": "Frankfurt Galaxy",
+          "shortName": "Galaxy"
+        },
+        "homeScore": 20,
+        "guestScore": 42,
+        "time": "15:00",
+        "location": "Stuttgart",
+        "stadium": "Gazi-Stadion",
+        "externalGameData": true,
+        "started": true,
+        "finished": true,
+        "season": "21",
+        "scores": {
+          "1": [
+            {
+              "id": "109:36FG",
+              "homeScore": 0,
+              "guestScore": 7,
+              "quater": 1,
+              "time": "09:36",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "FG",
+                "logo": "https://imgur.com/ry0LFh7.png"
+              },
+              "scorer": { "name": "G. Adams" }
+            },
+            {
+              "id": "105:42FG",
+              "homeScore": 0,
+              "guestScore": 13,
+              "quater": 1,
+              "time": "05:42",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "FG",
+                "logo": "https://imgur.com/ry0LFh7.png"
+              },
+              "scorer": { "name": "G. Adams" }
+            }
+          ],
+          "2": [
+            {
+              "id": "213:21FG",
+              "homeScore": 0,
+              "guestScore": 20,
+              "quater": 2,
+              "time": "13:21",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "FG",
+                "logo": "https://imgur.com/ry0LFh7.png"
+              },
+              "scorer": { "name": "M. Rutsch" }
+            },
+            {
+              "id": "200:26FG",
+              "homeScore": 0,
+              "guestScore": 27,
+              "quater": 2,
+              "time": "00:26",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "FG",
+                "logo": "https://imgur.com/ry0LFh7.png"
+              },
+              "scorer": { "name": "L. Regler" }
+            }
+          ],
+          "3": [
+            {
+              "id": "311:26SS",
+              "homeScore": 7,
+              "guestScore": 27,
+              "quater": 3,
+              "time": "11:26",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "SS",
+                "logo": "https://imgur.com/n0nGO0W.png"
+              },
+              "scorer": { "name": "S. Shannon" }
+            },
+            {
+              "id": "301:59FG",
+              "homeScore": 7,
+              "guestScore": 33,
+              "quater": 3,
+              "time": "01:59",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "FG",
+                "logo": "https://imgur.com/ry0LFh7.png"
+              },
+              "scorer": { "name": "M. Johannknecht" }
+            }
+          ],
+          "4": [
+            {
+              "id": "410:20FG",
+              "homeScore": 7,
+              "guestScore": 36,
+              "quater": 4,
+              "time": "10:20",
+              "type": "FG",
+              "scoringTeam": {
+                "id": "FG",
+                "logo": "https://imgur.com/ry0LFh7.png"
+              },
+              "scorer": { "name": "N. Strahmann" }
+            },
+            {
+              "id": "408:20SS",
+              "homeScore": 14,
+              "guestScore": 36,
+              "quater": 4,
+              "time": "08:20",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "SS",
+                "logo": "https://imgur.com/n0nGO0W.png"
+              },
+              "scorer": { "name": "J. Wright" }
+            },
+            {
+              "id": "403:54FG",
+              "homeScore": 14,
+              "guestScore": 42,
+              "quater": 4,
+              "time": "03:54",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "FG",
+                "logo": "https://imgur.com/ry0LFh7.png"
+              },
+              "scorer": { "name": "G. Ameln" }
+            },
+            {
+              "id": "401:55SS",
+              "homeScore": 20,
+              "guestScore": 42,
+              "quater": 4,
+              "time": "01:55",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "SS",
+                "logo": "https://imgur.com/n0nGO0W.png"
+              },
+              "scorer": { "name": "A. Eitel" }
+            }
+          ]
+        }
+      }
+    ],
+    "3": [
+      {
+        "id": "BDHD2103",
+        "date": "7-3-2021",
+        "gameday": 3,
+        "homeTeam": {
+          "id": "BD",
+          "logo": "https://imgur.com/9rf27qP.png",
+          "name": "Barcelona Dragons",
+          "shortName": "Dragons"
+        },
+        "guestTeam": {
+          "id": "HD",
+          "logo": "https://imgur.com/abxBs9Y.png",
+          "name": "Hamburg Sea Devils",
+          "shortName": "Sea Devils"
+        },
+        "homeScore": 14,
+        "guestScore": 32,
+        "time": "19:00",
+        "location": "Reus",
+        "stadium": "Estadio municipal",
+        "externalGameData": true,
+        "started": true,
+        "finished": true,
+        "season": "21",
+        "scores": {
+          "1": [
+            {
+              "id": "110:47HD",
+              "homeScore": 0,
+              "guestScore": 7,
+              "quater": 1,
+              "time": "10:47",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "HD",
+                "logo": "https://imgur.com/abxBs9Y.png"
+              },
+              "scorer": { "name": "J. Kruse" }
+            },
+            {
+              "id": "105:08HD",
+              "homeScore": 0,
+              "guestScore": 10,
+              "quater": 1,
+              "time": "05:08",
+              "type": "FG",
+              "scoringTeam": {
+                "id": "HD",
+                "logo": "https://imgur.com/abxBs9Y.png"
+              },
+              "scorer": { "name": "P. Andersen" }
+            },
+            {
+              "id": "100:15HD",
+              "homeScore": 0,
+              "guestScore": 13,
+              "quater": 1,
+              "time": "00:15",
+              "type": "FG",
+              "scoringTeam": {
+                "id": "HD",
+                "logo": "https://imgur.com/abxBs9Y.png"
+              },
+              "scorer": { "name": "P. Andersen" }
+            }
+          ],
+          "2": [
+            {
+              "id": "205:10HD",
+              "homeScore": 0,
+              "guestScore": 16,
+              "quater": 2,
+              "time": "05:10",
+              "type": "FG",
+              "scoringTeam": {
+                "id": "HD",
+                "logo": "https://imgur.com/abxBs9Y.png"
+              },
+              "scorer": { "name": "P. Andersen" }
+            },
+            {
+              "id": "203:52HD",
+              "homeScore": 0,
+              "guestScore": 23,
+              "quater": 2,
+              "time": "03:52",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "HD",
+                "logo": "https://imgur.com/abxBs9Y.png"
+              },
+              "scorer": { "name": "J. Rogers" }
+            }
+          ],
+          "3": [
+            {
+              "id": "304:11HD",
+              "homeScore": 0,
+              "guestScore": 29,
+              "quater": 3,
+              "time": "04:11",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "HD",
+                "logo": "https://imgur.com/abxBs9Y.png"
+              },
+              "scorer": { "name": "A. Botella" }
+            }
+          ],
+          "4": [
+            {
+              "id": "413:45HD",
+              "homeScore": 0,
+              "guestScore": 32,
+              "quater": 4,
+              "time": "13:45",
+              "type": "FG",
+              "scoringTeam": {
+                "id": "HD",
+                "logo": "https://imgur.com/abxBs9Y.png"
+              },
+              "scorer": { "name": "P. Andersen" }
+            },
+            {
+              "id": "404:44BD",
+              "homeScore": 8,
+              "guestScore": 32,
+              "quater": 4,
+              "time": "04:44",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BD",
+                "logo": "https://imgur.com/9rf27qP.png"
+              },
+              "scorer": { "name": "J. Constant" }
+            },
+            {
+              "id": "401:55BD",
+              "homeScore": 14,
+              "guestScore": 32,
+              "quater": 4,
+              "time": "01:55",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BD",
+                "logo": "https://imgur.com/9rf27qP.png"
+              },
+              "scorer": { "name": "N. Lester" }
+            }
+          ]
+        }
+      },
+      {
+        "id": "LKCC2103",
+        "date": "7-4-2021",
+        "gameday": 3,
+        "homeTeam": {
+          "id": "LK",
+          "logo": "https://imgur.com/QhJTTds.png",
+          "name": "Leipzig Kings",
+          "shortName": "Kings"
+        },
+        "guestTeam": {
+          "id": "CC",
+          "logo": "https://imgur.com/je8mwHO.png",
+          "name": "Cologne Centurions",
+          "shortName": "Centurions"
+        },
+        "homeScore": 47,
+        "guestScore": 48,
+        "time": "15:00",
+        "location": "Leipzig",
+        "stadium": "Alfred-K.-Sportpark",
+        "externalGameData": true,
+        "started": true,
+        "finished": true,
+        "season": "21",
+        "scores": {
+          "1": [
+            {
+              "id": "113:20LK",
+              "homeScore": 7,
+              "guestScore": 0,
+              "quater": 1,
+              "time": "13:20",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "A. Jalloh" }
+            },
+            {
+              "id": "112:04CC",
+              "homeScore": 7,
+              "guestScore": 7,
+              "quater": 1,
+              "time": "12:04",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "Q. Pounds" }
+            },
+            {
+              "id": "107:14CC",
+              "homeScore": 7,
+              "guestScore": 14,
+              "quater": 1,
+              "time": "07:14",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "M. London" }
+            }
+          ],
+          "2": [
+            {
+              "id": "211:57CC",
+              "homeScore": 7,
+              "guestScore": 21,
+              "quater": 2,
+              "time": "11:57",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "P. Poetsch" }
+            },
+            {
+              "id": "204:12LK",
+              "homeScore": 13,
+              "guestScore": 21,
+              "quater": 2,
+              "time": "04:12",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "T. Knuettel" }
+            },
+            {
+              "id": "203:10CC",
+              "homeScore": 13,
+              "guestScore": 27,
+              "quater": 2,
+              "time": "03:10",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "M. London" }
+            },
+            {
+              "id": "201:10LK",
+              "homeScore": 21,
+              "guestScore": 27,
+              "quater": 2,
+              "time": "01:10",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "R. Sobowale" }
+            }
+          ],
+          "3": [
+            {
+              "id": "311:54LK",
+              "homeScore": 27,
+              "guestScore": 27,
+              "quater": 3,
+              "time": "11:54",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "A. Dable-Wolf" }
+            },
+            {
+              "id": "306:44LK",
+              "homeScore": 34,
+              "guestScore": 27,
+              "quater": 3,
+              "time": "06:44",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "R. Sobowale" }
+            },
+            {
+              "id": "302:21CC",
+              "homeScore": 34,
+              "guestScore": 34,
+              "quater": 3,
+              "time": "02:21",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "M. London" }
+            },
+            {
+              "id": "300:49LK",
+              "homeScore": 40,
+              "guestScore": 34,
+              "quater": 3,
+              "time": "00:49",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "A. Dable-Wolf" }
+            }
+          ],
+          "4": [
+            {
+              "id": "414:18CC",
+              "homeScore": 40,
+              "guestScore": 40,
+              "quater": 4,
+              "time": "14:18",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "M. London" }
+            },
+            {
+              "id": "408:20LK",
+              "homeScore": 47,
+              "guestScore": 40,
+              "quater": 4,
+              "time": "08:20",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "LK",
+                "logo": "https://imgur.com/QhJTTds.png"
+              },
+              "scorer": { "name": "J. Awini" }
+            },
+            {
+              "id": "407:02CC",
+              "homeScore": 47,
+              "guestScore": 48,
+              "quater": 4,
+              "time": "07:02",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "CC",
+                "logo": "https://imgur.com/je8mwHO.png"
+              },
+              "scorer": { "name": "F. Eichhorn" }
+            }
+          ]
+        }
+      },
+      {
+        "id": "BTSS2103",
+        "date": "7-4-2021",
+        "gameday": 3,
+        "homeTeam": {
+          "id": "BT",
+          "logo": "https://imgur.com/IULeISd.png",
+          "name": "Berlin Thunder",
+          "shortName": "Thunder"
+        },
+        "guestTeam": {
+          "id": "SS",
+          "logo": "https://imgur.com/n0nGO0W.png",
+          "name": "Stuttgart Surge",
+          "shortName": "Surge"
+        },
+        "homeScore": 40,
+        "guestScore": 19,
+        "time": "15:00",
+        "location": "Berlin",
+        "stadium": "Stadion am Wurfplatz",
+        "externalGameData": true,
+        "started": true,
+        "finished": true,
+        "season": "21",
+        "scores": {
+          "1": [
+            {
+              "id": "108:15BT",
+              "homeScore": 6,
+              "guestScore": 0,
+              "quater": 1,
+              "time": "08:15",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BT",
+                "logo": "https://imgur.com/IULeISd.png"
+              },
+              "scorer": { "name": "S. Jones" }
+            },
+            {
+              "id": "105:32SS",
+              "homeScore": 6,
+              "guestScore": 6,
+              "quater": 1,
+              "time": "05:32",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "SS",
+                "logo": "https://imgur.com/n0nGO0W.png"
+              },
+              "scorer": { "name": "N. Wenzelburger" }
+            },
+            {
+              "id": "102:23BT",
+              "homeScore": 12,
+              "guestScore": 6,
+              "quater": 1,
+              "time": "02:23",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BT",
+                "logo": "https://imgur.com/IULeISd.png"
+              },
+              "scorer": { "name": "S. Jones" }
+            }
+          ],
+          "2": [
+            {
+              "id": "210:29BT",
+              "homeScore": 18,
+              "guestScore": 6,
+              "quater": 2,
+              "time": "10:29",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BT",
+                "logo": "https://imgur.com/IULeISd.png"
+              },
+              "scorer": { "name": "S. Jones" }
+            },
+            {
+              "id": "201:34SS",
+              "homeScore": 18,
+              "guestScore": 14,
+              "quater": 2,
+              "time": "01:34",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "SS",
+                "logo": "https://imgur.com/n0nGO0W.png"
+              },
+              "scorer": { "name": "D. Meza" }
+            }
+          ],
+          "3": [
+            {
+              "id": "314:08BT",
+              "homeScore": 24,
+              "guestScore": 14,
+              "quater": 3,
+              "time": "14:08",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BT",
+                "logo": "https://imgur.com/IULeISd.png"
+              },
+              "scorer": { "name": "N. Schumann" }
+            },
+            {
+              "id": "314:08SS",
+              "homeScore": 24,
+              "guestScore": 16,
+              "quater": 3,
+              "time": "14:08",
+              "type": "PAT",
+              "scoringTeam": {
+                "id": "SS",
+                "logo": "https://imgur.com/n0nGO0W.png"
+              },
+              "scorer": { "name": "B. Wenzler" }
+            },
+            {
+              "id": "303:40SS",
+              "homeScore": 24,
+              "guestScore": 19,
+              "quater": 3,
+              "time": "03:40",
+              "type": "FG",
+              "scoringTeam": {
+                "id": "SS",
+                "logo": "https://imgur.com/n0nGO0W.png"
+              },
+              "scorer": { "name": "T. Bronn" }
+            }
+          ],
+          "4": [
+            {
+              "id": "414:48BT",
+              "homeScore": 32,
+              "guestScore": 19,
+              "quater": 4,
+              "time": "14:48",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BT",
+                "logo": "https://imgur.com/IULeISd.png"
+              },
+              "scorer": { "name": "J. Crawford" }
+            },
+            {
+              "id": "405:48BT",
+              "homeScore": 40,
+              "guestScore": 19,
+              "quater": 4,
+              "time": "05:48",
+              "type": "TD",
+              "scoringTeam": {
+                "id": "BT",
+                "logo": "https://imgur.com/IULeISd.png"
+              },
+              "scorer": { "name": "J. Crawford" }
+            }
+          ]
+        }
+      },
+      {
+        "id": "FGPW2103",
+        "date": "7-04-2021",
+        "gameday": 3,
+        "homeTeam": {
+          "id": "FG",
+          "name": "Frankfurt Galaxy",
+          "logo": "https://imgur.com/ry0LFh7.png",
+          "shortName": "Galaxy",
+          "division": "South"
+        },
+        "guestTeam": {
+          "id": "PW",
+          "name": "Panthers Wroclaw",
+          "logo": "https://imgur.com/RfgCanW.png",
+          "shortName": "Panthers",
+          "division": "North"
+        },
+        "homeScore": 22,
+        "guestScore": 13,
+        "time": "15:00",
+        "location": "Frankfurt, Deutschland",
+        "stadium": "Deutsche Bank Park",
+        "started": true,
+        "finished": true,
+        "scores": {}
+      }
+    ]
+  }
+}

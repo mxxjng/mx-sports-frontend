@@ -1,0 +1,120 @@
+{
+  "standings": {
+    "South": [
+      {
+        "team": "FG",
+        "division": "South",
+        "logo": "https://imgur.com/ry0LFh7.png",
+        "teamName": "Frankfurt Galaxy",
+        "gamesPlayed": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": "79:50",
+        "diff": 29,
+        "pct": "66.7",
+        "pctData": 66.66666666666666
+      },
+      {
+        "team": "CC",
+        "division": "South",
+        "logo": "https://imgur.com/je8mwHO.png",
+        "teamName": "Cologne Centurions",
+        "gamesPlayed": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": "127:114",
+        "diff": 13,
+        "pct": "66.7",
+        "pctData": 66.66666666666666
+      },
+      {
+        "team": "SS",
+        "division": "South",
+        "logo": "https://imgur.com/n0nGO0W.png",
+        "teamName": "Stuttgart Surge",
+        "gamesPlayed": 3,
+        "wins": 1,
+        "draws": 0,
+        "losses": 2,
+        "points": "60:99",
+        "diff": -39,
+        "pct": "33.3",
+        "pctData": 33.33333333333333
+      },
+      {
+        "team": "BD",
+        "division": "South",
+        "logo": "https://imgur.com/9rf27qP.png",
+        "teamName": "Barcelona Dragons",
+        "gamesPlayed": 3,
+        "wins": 0,
+        "draws": 0,
+        "losses": 3,
+        "points": "43:93",
+        "diff": -50,
+        "pct": "0.0",
+        "pctData": 0
+      }
+    ],
+    "North": [
+      {
+        "team": "HD",
+        "division": "North",
+        "logo": "https://imgur.com/abxBs9Y.png",
+        "teamName": "Hamburg Sea Devils",
+        "gamesPlayed": 2,
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "points": "49:29",
+        "diff": 20,
+        "pct": "100.0",
+        "pctData": 100
+      },
+      {
+        "team": "PW",
+        "division": "North",
+        "logo": "https://imgur.com/RfgCanW.png",
+        "teamName": "Panthers Wroclaw",
+        "gamesPlayed": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": "122:89",
+        "diff": 33,
+        "pct": "66.7",
+        "pctData": 66.66666666666666
+      },
+      {
+        "team": "BT",
+        "division": "North",
+        "logo": "https://imgur.com/IULeISd.png",
+        "teamName": "Berlin Thunder",
+        "gamesPlayed": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": "67:56",
+        "diff": 11,
+        "pct": "50.0",
+        "pctData": 50
+      },
+      {
+        "team": "LK",
+        "division": "North",
+        "logo": "https://imgur.com/QhJTTds.png",
+        "teamName": "Leipzig Kings",
+        "gamesPlayed": 3,
+        "wins": 1,
+        "draws": 0,
+        "losses": 2,
+        "points": "112:129",
+        "diff": -17,
+        "pct": "33.3",
+        "pctData": 33.33333333333333
+      }
+    ]
+  }
+}

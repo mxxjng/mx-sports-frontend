@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #1a1c24;
+}
+
+a {
+  color: white;
+}
+
+td,
+th {
+  padding: 10px 10px;
+  text-align: left;
+}
+
+th {
+  font-family: 'ProximaNova-Bold';
+}
+
+.no-br {
+  border-bottom: none;
+}
+
+tr {
+  background-color: #24252f;
+  border-bottom: 2px solid #1a1c24;
+
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  font-family: 'ProximaNova-Regular';
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.modal-open {
+  transition: 0.2s;
+  transform: translateX(0);
+}
+.modal-closed {
+  transition: 0.2s;
+  transform: translateX(200%);
+}
+
+.gameprev-team {
+  width: 40%;
+}
+
+.gameprev-score {
+  width: 20%;
+}
+
+.playercard {
+  max-width: 170px;
+}
+
+.playercard-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  height: 60%;
+}
+
+.playercard-img {
+  z-index: 2;
+  position: relative;
+}
+
+.playercard-bglogo {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  top: 15%;
+  z-index: 0;
+  opacity: 0.15;
+  transform: translateX(-50%);
+  transition: 0.2s;
+}
+
+.playercard-bglogo-active {
+  position: absolute;
+  width: 95%;
+  left: 50%;
+  top: 15%;
+  z-index: 0;
+  opacity: 0.4;
+  transform: translateX(-50%);
+  transition: 0.2s;
+}
+
+/* Playoff brackets */
+
+.playoff-match {
+  min-width: 200px;
+}
+
+.bb {
+  border-bottom: 1px solid #1a1c24;
+}
+
+.connector {
+  position: absolute;
+  top: 48px;
+  right: 15px;
+  width: 17px;
+  height: 130px;
+  border-top: 1px solid #24252f;
+  border-bottom: 1px solid #24252f;
+  border-right: 1px solid #24252f;
+}
+
+.width-200 {
+  width: 200px;
+}
+
+.width-232 {
+  width: 232px;
+}
+
+.heigth-240 {
+  height: 240px;
+}
+
+.connector-line {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 15px;
+  height: 114px;
+  border-bottom: 1px solid #24252f;
+}
+
+/* Media queries */
+
+@media screen and (min-width: 480px) {
+  .gameprev-team {
+    width: 45%;
+  }
+
+  .gameprev-score {
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .playercard {
+    max-width: 284px;
+  }
+}

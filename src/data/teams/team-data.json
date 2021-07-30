@@ -1,0 +1,68 @@
+{
+  "teamdata": [
+    {
+      "id": "SS",
+      "name": "Stuttgart Surge",
+      "logo": "https://imgur.com/n0nGO0W.png",
+      "shortName": "Surge",
+      "division": "South",
+      "color:": "#fff"
+    },
+    {
+      "id": "BD",
+      "name": "Barcelona Dragons",
+      "logo": "https://imgur.com/9rf27qP.png",
+      "shortName": "Dragons",
+      "division": "South",
+      "color:": "#fff"
+    },
+    {
+      "id": "HD",
+      "name": "Hamburg Sea Devils",
+      "logo": "https://imgur.com/abxBs9Y.png",
+      "shortName": "Sea Devils",
+      "division": "North",
+      "color:": "#fff"
+    },
+    {
+      "id": "PW",
+      "name": "Panthers Wroclaw",
+      "logo": "https://imgur.com/RfgCanW.png",
+      "shortName": "Panthers",
+      "division": "North",
+      "color:": "#fff"
+    },
+    {
+      "id": "LK",
+      "name": "Leipzig Kings",
+      "logo": "https://imgur.com/QhJTTds.png",
+      "shortName": "Kings",
+      "division": "North",
+      "color:": "#fff"
+    },
+    {
+      "id": "BT",
+      "name": "Berlin Thunder",
+      "logo": "https://imgur.com/IULeISd.png",
+      "shortName": "Thunder",
+      "division": "North",
+      "color:": "#fff"
+    },
+    {
+      "id": "FG",
+      "name": "Frankfurt Galaxy",
+      "logo": "https://imgur.com/ry0LFh7.png",
+      "shortName": "Galaxy",
+      "division": "South",
+      "color:": "#fff"
+    },
+    {
+      "id": "CC",
+      "name": "Cologne Centurions",
+      "logo": "https://imgur.com/je8mwHO.png",
+      "shortName": "Centurions",
+      "division": "South",
+      "color:": "#fff"
+    }
+  ]
+}
