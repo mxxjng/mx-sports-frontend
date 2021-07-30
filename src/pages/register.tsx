@@ -4,12 +4,26 @@ import Image from 'next/image';
 
 import Layout from '../components/layout';
 import { makeRequest } from '../utils/utils';
+import RegisterForm from '../components/registerForm';
+import { API_URL } from '../utils/constants';
 
 export default function Register() {
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    let req = await makeRequest('http://localhost:5000/api/v1/exercise', 'GET');
-    console.log(req);
+  const registerUser = async (formData) => {
+    try {
+      const { email, password, firstName, lastName, gender } = formData;
+      let res = await makeRequest(`${API_URL}/api/v1/user/register`, 'POST', {
+        email,
+        password,
+        firstName,
+        lastName,
+        gender,
+        height: parseInt(formData.height),
+        weight: parseInt(formData.weight),
+      });
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -23,26 +37,7 @@ export default function Register() {
           <h1 className="text-2xl md:text-4xl text-headline font-headline my-2">
             Register
           </h1>
-          <form onSubmit={handleLogin}>
-            <input
-              className="w-full rounded-md bg-bgHighlight text-headline p-2 mb-2"
-              placeholder="E-Mail"
-              type="text"
-              required
-            />
-            <input
-              className="w-full rounded-md bg-bgHighlight text-headline p-2 mb-2"
-              placeholder="Passwort"
-              type="password"
-              required
-            />
-            <button
-              type="submit"
-              className="p-2 border border-primary rounded-md w-full text-headline"
-            >
-              Jetzt registrieren
-            </button>
-          </form>
+          <RegisterForm registerUser={registerUser} />
         </div>
       </Layout>
     </div>
