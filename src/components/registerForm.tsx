@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Input from "./form/input";
 
 const RegisterForm = ({ registerUser }) => {
     const [formData, setFormData] = useState({
@@ -6,8 +7,8 @@ const RegisterForm = ({ registerUser }) => {
         password: "",
         firstName: "",
         lastName: "",
-        height: 0,
-        weight: 0,
+        height: "",
+        weight: "",
         gender: "",
     });
 
@@ -20,66 +21,82 @@ const RegisterForm = ({ registerUser }) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    console.log(formData);
+
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <input
-                    className="w-full rounded-md bg-bgHighlight text-headline p-2 mb-2"
-                    placeholder="E-Mail"
+                <Input
+                    placeHolder="E-Mail"
                     type="text"
                     required
-                    onChange={handleInput}
+                    handleChange={handleInput}
                     name="email"
+                    value={formData.email}
                 />
-                <input
-                    className="w-full rounded-md bg-bgHighlight text-headline p-2 mb-2"
-                    placeholder="Passwort"
+                <Input
+                    placeHolder="Passwort"
                     type="password"
                     required
-                    onChange={handleInput}
+                    handleChange={handleInput}
                     name="password"
+                    value={formData.password}
                 />
-                <input
-                    className="w-full rounded-md bg-bgHighlight text-headline p-2 mb-2"
-                    placeholder="Vorname"
+                <Input
+                    placeHolder="Vorname"
                     type="text"
                     required
-                    onChange={handleInput}
+                    handleChange={handleInput}
                     name="firstName"
+                    value={formData.firstName}
                 />
-                <input
-                    className="w-full rounded-md bg-bgHighlight text-headline p-2 mb-2"
-                    placeholder="Nachname"
+                <Input
+                    placeHolder="Nachname"
                     type="text"
                     required
-                    onChange={handleInput}
+                    handleChange={handleInput}
                     name="lastName"
+                    value={formData.lastName}
                 />
-                <input
-                    className="w-full rounded-md bg-bgHighlight text-headline p-2 mb-2"
-                    placeholder="Größe"
+                <Input
+                    placeHolder="Größe"
                     type="number"
-                    min={1}
                     required
-                    onChange={handleInput}
+                    handleChange={handleInput}
                     name="height"
-                />
-                <input
-                    className="w-full rounded-md bg-bgHighlight text-headline p-2 mb-2"
-                    placeholder="Gewicht"
-                    type="number"
+                    value={formData.height}
                     min={1}
-                    required
-                    onChange={handleInput}
-                    name="weight"
                 />
-                <select name="gender" id="" onChange={handleInput}>
-                    <option value="MALE"></option>
-                    <option value="FEMALE"></option>
+                <Input
+                    placeHolder="Gewicht"
+                    type="number"
+                    required
+                    handleChange={handleInput}
+                    name="weight"
+                    value={formData.weight}
+                    min={1}
+                />
+                <select
+                    name="gender"
+                    id="gender"
+                    className="w-full bg-bgHighlight px-2 py-3 rounded-md text-textColor mb-2"
+                    placeholder="Geschlecht"
+                    onChange={handleInput}
+                    value={formData.gender}
+                >
+                    <option value="" defaultValue="" className="text-textColor">
+                        Geschlecht auswählen...
+                    </option>
+                    <option value="MALE" className="text-textColor">
+                        Männlich
+                    </option>
+                    <option value="FEMALE" className="text-textColor">
+                        Weiblich
+                    </option>
                 </select>
                 <button
                     type="submit"
-                    className="p-2 border border-primary rounded-md w-full text-headline"
+                    className="px-2 py-3 border border-primary rounded-md w-full text-headline font-bold"
                 >
                     Jetzt registrieren
                 </button>

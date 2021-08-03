@@ -67,11 +67,8 @@ const Timer: React.FC<TimerProps> = ({ timerTime = 60 }): JSX.Element => {
         <>
             <button
                 onClick={isRunning ? stopTimer : startTimer}
-                className={
-                    isRunning
-                        ? `px-4 py-2 text-headline rounded-lg font-bold gradient-bg w-full text-center mb-4 text-md mx-1 flex justify-center`
-                        : `px-4 py-2 text-headline rounded-lg font-bold bg-bgHighlight w-full text-center mb-4 text-md mx-1 flex justify-center`
-                }
+                className={`${isRunning ? `gradient-bg` : `bg-bgHighlight`}
+                px-4 py-2 text-headline rounded-lg font-bold w-full text-center mb-4 text-md mx-1 flex justify-center`}
             >
                 <div className="flex items-center">
                     <TimeIcon /> <span className="ml-1">{time} s</span>

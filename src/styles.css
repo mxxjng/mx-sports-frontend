@@ -6,8 +6,16 @@ body {
     background-color: #191b27;
 }
 
+.z-highest {
+    z-index: 1000000;
+}
+
 button:focus {
     outline: none;
+}
+
+.dark-opacity {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .gradient-bg {
