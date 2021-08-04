@@ -14,7 +14,7 @@ type TimerProps = {
 const Timer: React.FC<TimerProps> = ({ timerTime = 60 }): JSX.Element => {
     const [time, setTime] = useState<number>(timerTime);
     const [isRunning, setIsRunning] = useState<boolean>(false);
-    const [intervalval, setIntervalVal] = useState<number>();
+    const [intervalval, setIntervalVal] = useState<any>();
 
     /*
     const [audio] = useState(
@@ -30,7 +30,7 @@ const Timer: React.FC<TimerProps> = ({ timerTime = 60 }): JSX.Element => {
         e.preventDefault();
         setIsRunning(true);
         let seconds = time;
-        let countDown = setInterval(() => {
+        let countDown: any = setInterval(() => {
             let newSeconds = handleCountDown(seconds);
             seconds = newSeconds;
         }, 1000);
