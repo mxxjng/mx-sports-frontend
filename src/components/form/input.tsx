@@ -26,7 +26,7 @@ const Input: React.FC<InputProps> = ({
             className={
                 className
                     ? className
-                    : "w-full rounded-md bg-bgHighlight text-headline px-2 py-3 mb-2"
+                    : "w-full rounded-md bg-bgHighlight text-headline px-2 py-3 mb-3"
             }
             placeholder={placeHolder}
             type={type}

@@ -1,31 +1,32 @@
+import { useState } from "react";
 import Head from "next/head";
-import Layout from "../components/layout";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+
+import Layout from "../components/layout";
 import { useAuth } from "../contexts/auth";
 import { useFetch } from "../hooks/fetchData";
 import { API_URL } from "../utils/constants";
-import Link from "next/link";
-import { useState } from "react";
 import CreateExercise from "../components/create-exercise/createExercise";
+import { UserExercise } from "../interfaces/interfaces";
 
 export default function Dashboard() {
     const [openCreate, setOpenCreate] = useState(false);
     const router = useRouter();
-    const auth: any = useAuth();
-    const { response, error } = useFetch(
+    const auth = useAuth();
+    const { status, error, data } = useFetch<UserExercise[]>(
         `${API_URL}/api/v1/userexercise`,
         "GET",
         [auth]
     );
 
     console.log(auth);
-    console.log(response);
+    console.log(data);
 
     if (auth.error) {
         router.push("/login");
     }
-
-    let exercises;
 
     if (auth.user) {
         return (
@@ -35,45 +36,55 @@ export default function Dashboard() {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <Layout>
-                    {openCreate && (
-                        <CreateExercise
-                            close={() => {
-                                setOpenCreate(false);
-                            }}
-                        />
-                    )}
-                    <div className="max-w-7xl mx-auto p-2">
-                        <h1 className="text-2xl md:text-4xl text-headline font-headline my-2">
+                    <CreateExercise
+                        close={() => {
+                            setOpenCreate(false);
+                        }}
+                        isOpen={openCreate}
+                    />
+                    <div className="max-w-7xl mx-auto px-4">
+                        <h1 className="text-2xl md:text-4xl text-headline font-headline my-3">
                             Meine Übungen
                         </h1>
                         <div
                             onClick={() => setOpenCreate(true)}
-                            className="fixed w-14 h-14 z-50 rounded-full bottom-16 right-4 gradient-bg flex items-center justify-center"
+                            className="fixed w-14 h-14 z-50 rounded-full bottom-16  right-4 md:right-12 bg-primary flex items-center justify-center cursor-pointer"
                         >
-                            <button className="font-bold text-headline text-xl">
+                            <button className="font-headline text-headline text-xl">
                                 +
                             </button>
                         </div>
                         <div>
-                            {response?.data ? (
+                            {data ? (
                                 <div>
-                                    {response.data.length > 0 ? (
+                                    {data.length > 0 ? (
                                         <div>
-                                            {response.data.map((d) => {
+                                            {data.map((d) => {
                                                 return (
                                                     <div
                                                         key={d.id}
-                                                        className="cursor-pointer p-2 bg-bgHighlight rounded-md mb-2"
+                                                        className="cursor-pointer px-3 py-3 bg-bgHighlight rounded-md mb-2"
                                                     >
                                                         <Link
                                                             href={`/exercises/${d.id}`}
                                                         >
-                                                            <p className="text-headline">
-                                                                {
-                                                                    d.exercise
-                                                                        .name
-                                                                }
-                                                            </p>
+                                                            <div>
+                                                                <p className="text-headline font-text font-semibold">
+                                                                    {
+                                                                        d
+                                                                            .exercise
+                                                                            .name
+                                                                    }
+                                                                </p>
+                                                                <p className="text-primary font-text  text-xs">
+                                                                    {
+                                                                        d
+                                                                            .exercise
+                                                                            .exerciseCategory
+                                                                            .name
+                                                                    }
+                                                                </p>
+                                                            </div>
                                                         </Link>
                                                     </div>
                                                 );

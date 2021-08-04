@@ -21,8 +21,8 @@ export default function Dashboard() {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <Layout>
-                    <div className="max-w-5xl mx-auto text-center p-2">
-                        <h1 className="text-2xl md:text-4xl text-center text-headline font-headline my-2">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <h1 className="text-2xl md:text-4xl text-headline font-headline my-2">
                             Willkommen {auth.user.firstName}{" "}
                             {auth.user.lastName}
                         </h1>

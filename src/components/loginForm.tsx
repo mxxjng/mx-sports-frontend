@@ -16,8 +16,6 @@ const LoginForm = ({ loginUser }) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    console.log(formData);
-
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -39,7 +37,7 @@ const LoginForm = ({ loginUser }) => {
                 />
                 <button
                     type="submit"
-                    className="px-2 py-3 border border-primary rounded-md w-full text-headline font-bold"
+                    className="px-2 py-3 bg-primary rounded-md w-full text-headline font-headline"
                 >
                     Jetzt einloggen
                 </button>

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 import Layout from "../components/layout";
 import { makeRequest } from "../utils/utils";
@@ -41,12 +42,29 @@ export default function Register() {
                 <title>Register</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+
             <Layout>
-                <div className="max-w-xl mx-auto p-2">
-                    <h1 className="text-2xl md:text-4xl text-headline font-headline my-2">
-                        Register
-                    </h1>
-                    <RegisterForm registerUser={registerUser} />
+                <div className="max-w-xl mx-auto px-4 mt-0 md:mt-16">
+                    <div className="my-8 p-0 md:p-6 md:bg-bg md:border md:border-bgHighlight md:rounded-xl">
+                        <div className="mt-4 mb-6">
+                            <h1 className="text-2xl md:text-4xl text-headline font-headline my-2">
+                                Herzlich Willkommen!
+                            </h1>
+                            <p className="mb-4">
+                                Registriere dich jetzt mit deinen Daten und lege
+                                direkt los!
+                            </p>
+                        </div>
+                        <RegisterForm registerUser={registerUser} />
+                        <p className="text-textColor text-sm text-center my-2">
+                            Schon einen Account?{" "}
+                            <Link href="/login">
+                                <span className="text-primary">
+                                    Jetzt Anmelden
+                                </span>
+                            </Link>
+                        </p>
+                    </div>
                 </div>
             </Layout>
         </div>

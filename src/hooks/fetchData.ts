@@ -1,14 +1,28 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import axios, { Method } from "axios";
 
-export const useFetch = (
+interface State<T> {
+    status: "init" | "fetching" | "error" | "fetched";
+    data?: T;
+    error?: string;
+}
+
+export const useFetch = <T>(
     url: string,
-    method?: any,
-    refreshObject?: any,
+    method: Method,
+    refreshObject: any[] = [],
     payLoad?
-) => {
-    const [response, setResponse] = useState(null);
-    const [error, setError] = useState(null);
+): State<T> => {
+    const [data, setData] = useState<T | null>(null);
+    const [error, setError] = useState<string | null>(null);
+    const [status, setStatus] = useState("init");
+
+    const state: State<T> = {
+        status: "init",
+        error,
+        data,
+    };
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -20,12 +34,12 @@ export const useFetch = (
                           data: payLoad,
                       }))
                     : (res = await axios.request({ url, method }));
-                setResponse(res);
+                setData(res.data);
             } catch (error) {
                 setError(error);
             }
         };
         fetchData();
     }, [...refreshObject]);
-    return { response, error };
+    return state;
 };

@@ -21,8 +21,6 @@ const RegisterForm = ({ registerUser }) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    console.log(formData);
-
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -79,7 +77,7 @@ const RegisterForm = ({ registerUser }) => {
                 <select
                     name="gender"
                     id="gender"
-                    className="w-full bg-bgHighlight px-2 py-3 rounded-md text-textColor mb-2"
+                    className="w-full bg-bgHighlight px-2 py-3 rounded-md text-textColor mb-3"
                     placeholder="Geschlecht"
                     onChange={handleInput}
                     value={formData.gender}
@@ -96,7 +94,7 @@ const RegisterForm = ({ registerUser }) => {
                 </select>
                 <button
                     type="submit"
-                    className="px-2 py-3 border border-primary rounded-md w-full text-headline font-bold"
+                    className="px-2 py-3 bg-primary rounded-md w-full text-headline font-headline"
                 >
                     Jetzt registrieren
                 </button>

@@ -1,8 +1,15 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import Router, { useRouter } from "next/router";
 import { setAuthToken } from "../utils/utils";
+import { User } from "../interfaces/interfaces";
 import { API_URL } from "../utils/constants";
 import axios from "axios";
+
+interface Auth {
+    user?: User;
+    error?: string;
+    logout?: () => void;
+}
 
 const AuthContext = createContext({});
 
@@ -43,4 +50,4 @@ export const AuthProvider = ({ children }) => {
     );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = (): Auth => useContext(AuthContext);

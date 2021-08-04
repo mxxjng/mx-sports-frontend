@@ -2,8 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap");
+
+.hl {
+    line-height: 120% !important;
+}
+
+.vh-80 {
+    height: 90vh;
+}
+
+p {
+    font-family: "Inter";
+    color: #b5bbc9;
+    font-weight: 400;
+}
+
 body {
-    background-color: #191b27;
+    background-color: #181a20;
 }
 
 .z-highest {
@@ -42,7 +58,7 @@ th {
 
 tr {
     background-color: #24252f;
-    border-bottom: 2px solid #191b27;
+    border-bottom: 2px solid #181a20;
 
     margin-bottom: 10px;
 }
@@ -155,6 +171,26 @@ table {
     border-bottom: 1px solid #24252f;
 }
 
+/* BG Glow */
+.bg-glow {
+    position: absolute;
+    pointer-events: none;
+    background: radial-gradient(
+        36.18% 43.79% at 50% 50%,
+        #b0a2fc 0,
+        rgba(33, 33, 38, 0) 100%
+    );
+    filter: blur(50px);
+    mix-blend-mode: lighten;
+    opacity: 0.1;
+    transform: rotate(-15.47deg);
+    top: 20%;
+    left: 0%;
+    width: 200%;
+    height: 700.26px;
+    z-index: -1;
+}
+
 /* Media queries */
 
 @media screen and (min-width: 480px) {
@@ -170,5 +206,24 @@ table {
 @media screen and (min-width: 768px) {
     .playercard {
         max-width: 284px;
+    }
+
+    .bg-glow {
+        position: absolute;
+        pointer-events: none;
+        background: radial-gradient(
+            36.18% 43.79% at 50% 50%,
+            #b0a2fc 0,
+            rgba(33, 33, 38, 0) 100%
+        );
+        filter: blur(50px);
+        mix-blend-mode: lighten;
+        opacity: 0.1;
+        transform: rotate(-15.47deg);
+        top: 35%;
+        left: 0%;
+        width: 200%;
+        height: 700.26px;
+        z-index: -1;
     }
 }

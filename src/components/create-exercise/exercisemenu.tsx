@@ -1,65 +1,69 @@
 import { useFetch } from "../../hooks/fetchData";
 import { API_URL } from "../../utils/constants";
-import axios from "axios";
+import { Exercise } from "../../interfaces/interfaces";
+import { createUserExercise } from "../../utils/utils";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ExerciseMenu = ({ activeMenu, selectedCategory, setActiveMenu }) => {
-    const { response, error } = useFetch(
+    const { status, data, error } = useFetch<Exercise[]>(
         `${API_URL}/api/v1/exercise`,
-        "GET",
-        []
+        "GET"
     );
 
-    const createUserExercise = async (id) => {
-        try {
-            const res = await axios.post(
-                `${API_URL}/api/v1/userexercise/${id}`
-            );
-            if (res.data) {
-                alert("Übung erstellt " + id);
-                window.location.reload();
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    console.log(response);
-
     return (
-        <div className={activeMenu === "exercises" ? `block` : "hidden"}>
-            <div className="flex items-center mb-4">
-                <button
-                    className="text-headline mr-2 font-bold"
-                    onClick={() => setActiveMenu("main")}
+        <AnimatePresence>
+            {activeMenu === "exercises" && (
+                <motion.div
+                    initial={{ opacity: 0, translateX: 200 }}
+                    animate={{ opacity: 1, translateX: 0 }}
+                    exit={{ opacity: 0, translateX: 200 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute top-0 left-0 w-full"
                 >
-                    ❮
-                </button>
-                <h2 className="text-headline font-bold text-xl">
-                    Übung auswählen - {selectedCategory}
-                </h2>
-            </div>
-            {response?.data ? (
-                <div>
-                    {response.data
-                        .filter(
-                            (f) => f.exerciseCategory.name === selectedCategory
-                        )
-                        .map((d) => {
-                            return (
-                                <div
-                                    className="text-headline p-2 bg-bgHighlight rounded-md mb-2"
-                                    key={d.id}
-                                    onClick={() => createUserExercise(d.id)}
-                                >
-                                    <p>{d.name}</p>
-                                </div>
-                            );
-                        })}
-                </div>
-            ) : (
-                <p>loading</p>
+                    <div
+                        className="flex items-center mb-4 cursor-pointer"
+                        onClick={() => setActiveMenu("main")}
+                    >
+                        <button className="text-headline mr-2 font-headline">
+                            ❮
+                        </button>
+                        <h2 className="text-headline font-headline text-xl">
+                            Übung auswählen -{" "}
+                            <span className="text-primary">
+                                {selectedCategory}
+                            </span>
+                        </h2>
+                    </div>
+                    {data ? (
+                        <div>
+                            {data
+                                .filter(
+                                    (f) =>
+                                        f.exerciseCategory.name ===
+                                        selectedCategory
+                                )
+                                .map((d) => {
+                                    return (
+                                        <div
+                                            className="text-headline px-2 py-3 bg-bgHighlight rounded-md mb-2 cursor-pointer"
+                                            key={d.id}
+                                            onClick={() =>
+                                                createUserExercise(d.id)
+                                            }
+                                        >
+                                            <p className="text-headline font-text font-semibold">
+                                                {d.name}
+                                            </p>
+                                        </div>
+                                    );
+                                })}
+                        </div>
+                    ) : (
+                        <p>loading</p>
+                    )}
+                </motion.div>
             )}
-        </div>
+        </AnimatePresence>
     );
 };
 export default ExerciseMenu;

@@ -17,14 +17,11 @@ const Navigation = () => {
     if (auth.error) {
         return (
             <div>
-                <div className="flex justify-between items-center p-4 max-w-7xl mx-auto">
+                <div className="flex justify-between items-center px-4 py-2 md:py-4 max-w-7xl mx-auto">
                     <Link href="/">
-                        <Image
-                            src="/logo.png"
-                            width="66"
-                            height="34"
-                            alt="MX Sports"
-                        />
+                        <p className="font-headline text-primary text-2xl cursor-pointer">
+                            MX
+                        </p>
                     </Link>
 
                     <div className="hidden sm:flex">
@@ -51,14 +48,11 @@ const Navigation = () => {
     }
     return (
         <div>
-            <div className="flex justify-between items-center p-4 max-w-7xl mx-auto">
-                <Link href="/">
-                    <Image
-                        src="/logo.png"
-                        width="66"
-                        height="34"
-                        alt="MX Sports"
-                    />
+            <div className="flex justify-between items-center px-4 py-2 md:py-4 max-w-7xl mx-auto">
+                <Link href="/dashboard">
+                    <p className="font-headline text-primary text-2xl cursor-pointer">
+                        MX
+                    </p>
                 </Link>
 
                 <div className="hidden sm:flex">
@@ -79,7 +73,7 @@ const Navigation = () => {
                         <Link href="/exercises">Exercises</Link>
                     </div>
                     <div>
-                        <p className="text-headline p-2 font-bold">
+                        <p className="text-headline p-2 font-headline">
                             {auth?.user?.firstName} {auth?.user?.lastName}
                         </p>
                     </div>
