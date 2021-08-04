@@ -2,6 +2,7 @@ import { useFetch } from "../../hooks/fetchData";
 import { API_URL } from "../../utils/constants";
 import { ExerciseCategory } from "../../interfaces/interfaces";
 import { motion, AnimatePresence } from "framer-motion";
+import Spinner from "../spinner";
 
 const CategoryMenu = ({ activeMenu, setCategory, setActiveMenu }) => {
     const { status, data, error } = useFetch<ExerciseCategory[]>(
@@ -45,7 +46,9 @@ const CategoryMenu = ({ activeMenu, setCategory, setActiveMenu }) => {
                             })}
                         </div>
                     ) : (
-                        <p>loading</p>
+                        <div className="flex justify-center my-4">
+                            <Spinner />
+                        </div>
                     )}
                 </motion.div>
             )}

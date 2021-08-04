@@ -3,6 +3,7 @@ import { API_URL } from "../../utils/constants";
 import { Exercise } from "../../interfaces/interfaces";
 import { createUserExercise } from "../../utils/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import Spinner from "../spinner";
 
 const ExerciseMenu = ({ activeMenu, selectedCategory, setActiveMenu }) => {
     const { status, data, error } = useFetch<Exercise[]>(
@@ -59,7 +60,9 @@ const ExerciseMenu = ({ activeMenu, selectedCategory, setActiveMenu }) => {
                                 })}
                         </div>
                     ) : (
-                        <p>loading</p>
+                        <div className="flex justify-center my-4">
+                            <Spinner />
+                        </div>
                     )}
                 </motion.div>
             )}

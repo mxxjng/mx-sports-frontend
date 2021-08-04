@@ -49,3 +49,22 @@ export const deleteUserExercise = async (id) => {
         console.log(error);
     }
 };
+
+export const createOneRepMax = async (id, payLoad) => {
+    console.log(payLoad);
+    try {
+        const res = await axios.post(
+            `${API_URL}/api/v1/userexercise/onerepmax/${id}`,
+            {
+                date: payLoad.date,
+                weight: payLoad.weight,
+            }
+        );
+        if (res.data) {
+            alert("1 RM Erstellt");
+            window.location.reload();
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};

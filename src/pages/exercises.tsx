@@ -10,6 +10,7 @@ import { useFetch } from "../hooks/fetchData";
 import { API_URL } from "../utils/constants";
 import CreateExercise from "../components/create-exercise/createExercise";
 import { UserExercise } from "../interfaces/interfaces";
+import Spinner from "../components/spinner";
 
 export default function Dashboard() {
     const [openCreate, setOpenCreate] = useState(false);
@@ -98,7 +99,9 @@ export default function Dashboard() {
                                     )}
                                 </div>
                             ) : (
-                                <p>loading....</p>
+                                <div className="flex justify-center my-4">
+                                    <Spinner />
+                                </div>
                             )}
                         </div>
                     </div>
@@ -107,5 +110,9 @@ export default function Dashboard() {
         );
     }
 
-    return <div>loading...</div>;
+    return (
+        <div className="flex justify-center my-4">
+            <Spinner />
+        </div>
+    );
 }
