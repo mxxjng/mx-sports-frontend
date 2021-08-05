@@ -43,7 +43,7 @@ export default function Dashboard() {
                         }}
                         isOpen={openCreate}
                     />
-                    <div className="max-w-7xl mx-auto px-4">
+                    <div className="max-w-7xl mx-auto px-4 mb-40">
                         <h1 className="text-2xl md:text-4xl text-headline font-headline my-3">
                             Meine Übungen
                         </h1>

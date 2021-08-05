@@ -57,7 +57,7 @@ export default function Exercise() {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <Layout>
-                    <div className="max-w-7xl mx-auto px-4">
+                    <div className="max-w-7xl mx-auto px-4 mb-40">
                         <div>
                             <div className="flex items-center">
                                 <Timer />
