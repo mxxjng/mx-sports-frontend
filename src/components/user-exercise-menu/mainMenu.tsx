@@ -16,17 +16,23 @@ const MainMenu = ({ activeMenu, setActiveMenu }) => {
                         onClick={() => setActiveMenu("oneRepMax")}
                     >
                         <button className="text-headline font-text font-semibold">
-                            1 RM hinzufügen
+                            Maximalversuch hinzufügen
                         </button>
                     </div>
                     <div className="flex items-center px-2 py-3 rounded-md mb-2 cursor-pointer">
-                        <button className="text-headline font-text font-semibold">
-                            Training hinzufügen
+                        <button
+                            onClick={() => setActiveMenu("training")}
+                            className="text-headline font-text font-semibold"
+                        >
+                            Trainingseinheit hinzufügen
                         </button>
                     </div>
                     <div className="flex items-center px-2 py-3 rounded-md mb-2 cursor-pointer">
-                        <button className="text-headline font-text font-semibold">
-                            Anmerkung hinzufügen
+                        <button
+                            className="text-headline font-text font-semibold"
+                            onClick={() => setActiveMenu("comment")}
+                        >
+                            Übungsanmerkung hinzufügen
                         </button>
                     </div>
                     <div className="flex items-center px-2 py-3 rounded-md mb-2 cursor-pointer">

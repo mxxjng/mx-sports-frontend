@@ -68,3 +68,41 @@ export const createOneRepMax = async (id, payLoad) => {
         console.log(error);
     }
 };
+
+export const createTraining = async (id, date) => {
+    try {
+        const res = await axios.post(`${API_URL}/api/v1/exerciseData/${id}`, {
+            date,
+        });
+        if (res.data) {
+            alert("Training erstellt");
+            window.location.reload();
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const createTrainingSet = async (
+    userExerciseId,
+    trainingId,
+    weight,
+    reps,
+    setNumber
+) => {
+    try {
+        const res = await axios.post(
+            `${API_URL}/api/v1/exercisedata/set/${userExerciseId}/${trainingId}`,
+            {
+                weight,
+                reps,
+                setNumber,
+            }
+        );
+        if (res.data) {
+            alert("Training erstellt");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};

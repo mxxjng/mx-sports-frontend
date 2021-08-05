@@ -1,5 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import AddComment from "./addComment";
+import AddTraining from "./addTraining";
 import DeleteMenu from "./deleteMenu";
 import MainMenu from "./mainMenu";
 import OneRepMaxMenu from "./oneRepMaxMenu";
@@ -51,6 +53,20 @@ const UserExerciseMenu = ({ isOpen, close, exerciseId }) => {
                                     }
                                 />
                                 <OneRepMaxMenu
+                                    activeMenu={activeMenu}
+                                    exerciseId={exerciseId}
+                                    setActiveMenu={(menu) =>
+                                        setActiveMenu(menu)
+                                    }
+                                />
+                                <AddTraining
+                                    activeMenu={activeMenu}
+                                    exerciseId={exerciseId}
+                                    setActiveMenu={(menu) =>
+                                        setActiveMenu(menu)
+                                    }
+                                />
+                                <AddComment
                                     activeMenu={activeMenu}
                                     exerciseId={exerciseId}
                                     setActiveMenu={(menu) =>

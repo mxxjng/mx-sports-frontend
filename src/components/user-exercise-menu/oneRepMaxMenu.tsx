@@ -4,7 +4,6 @@ import { createOneRepMax } from "../../utils/utils";
 import Input from "../form/input";
 
 const OneRepMaxMenu = ({ activeMenu, setActiveMenu, exerciseId }) => {
-    const date = new Date().toLocaleDateString;
     const [formData, setFormData] = useState({
         weight: "",
         date: "",
@@ -34,18 +33,22 @@ const OneRepMaxMenu = ({ activeMenu, setActiveMenu, exerciseId }) => {
                     transition={{ duration: 0.3 }}
                     className="absolute top-0 left-0 w-full"
                 >
-                    <div className="text-center box-border">
+                    <div className=" box-border">
                         <div
-                            className="flex items-center mb-4 cursor-pointer"
+                            className="flex items-center mb-3 cursor-pointer"
                             onClick={() => setActiveMenu("main")}
                         >
                             <button className="text-headline mr-2 font-headline">
                                 ❮
                             </button>
                             <h2 className="text-headline font-headline text-xl">
-                                1 RM hinzufügen
+                                Maximalversuch hinzufügen
                             </h2>
                         </div>
+                        <p className="mb-3 text-sm md:text-base">
+                            Füge einen neuen Maximalversuch für deine Übung
+                            hinzu.
+                        </p>
                         <form onSubmit={handleSubmit}>
                             <input
                                 className="w-full rounded-md bg-bgHighlight text-headline px-2 py-3 mb-3"

@@ -11,10 +11,13 @@ import { API_URL } from "../../utils/constants";
 import { UserExercise } from "../../interfaces/interfaces";
 import { useState } from "react";
 import UserExerciseMenu from "../../components/user-exercise-menu/userExerciseMenu";
+import TrainingMenu from "../../components/training-menu/trainingMenu";
 
 export default function Exercise() {
     const [optionMenuOpen, setOptionMenuOpen] = useState(false);
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+    const [trainingMenuOpen, setTrainingMenuOpen] = useState(false);
+    const [currentTraining, setCurrentTraining] = useState("");
     const router = useRouter();
     const { exercise } = router.query;
     const auth = useAuth();
@@ -24,7 +27,12 @@ export default function Exercise() {
         [auth, exercise]
     );
 
+    const setCurrentTrainingData = (id) => {
+        return data?.exerciseData.find((f) => f.id === id);
+    };
+    const currentTrainingData = setCurrentTrainingData(currentTraining);
     console.log(data);
+    console.log(currentTrainingData);
 
     if (auth.error) {
         router.push("/login");
@@ -67,9 +75,17 @@ export default function Exercise() {
                                         close={() => setOptionMenuOpen(false)}
                                         exerciseId={data.id}
                                     />
-
-                                    <div className="mb-2">
-                                        <div className="">
+                                    <TrainingMenu
+                                        userexerciseId={data.id}
+                                        isOpen={trainingMenuOpen}
+                                        close={() => setTrainingMenuOpen(false)}
+                                        trainingData={currentTrainingData}
+                                    />
+                                    <div className="mb-4">
+                                        <h1 className="text-2xl text-headline font-headline ">
+                                            {data.exercise.name}
+                                        </h1>
+                                        <div className="mb-2">
                                             <p className="text-primary text-sm">
                                                 {
                                                     data.exercise
@@ -77,20 +93,17 @@ export default function Exercise() {
                                                 }
                                             </p>
                                         </div>
-                                        <h1 className="text-2xl text-headline font-headline mb-2">
-                                            {data.exercise.name}
-                                        </h1>
                                         <p className="text-textColor text-sm">
                                             {data.exercise.description}
                                         </p>
                                     </div>
-                                    <div className="mb-2">
-                                        <h2 className="text-lg text-headline font-headline">
+                                    <div className="mb-4">
+                                        <h2 className="text-lg text-headline font-text font-semibold">
                                             Aktueller 1 RM:
                                         </h2>
                                     </div>
-                                    <div className="mb-2">
-                                        <h2 className="text-lg text-headline font-headline mb-2">
+                                    <div className="mb-4">
+                                        <h2 className="text-lg text-headline font-text font-semibold">
                                             1 RM Verlauf:
                                         </h2>
                                         <div className="flex overflow-x-auto">
@@ -116,10 +129,36 @@ export default function Exercise() {
                                             })}
                                         </div>
                                     </div>
-                                    <div className="mb-2">
-                                        <h2 className="text-lg text-headline font-headline">
-                                            Absolvierte Trainingseinheiten:
+                                    <div className="mb-4">
+                                        <h2 className="text-lg text-headline font-text font-semibold">
+                                            Trainingseinheiten:
                                         </h2>
+                                        <div className="flex overflow-x-auto">
+                                            {data.exerciseData.map((d) => {
+                                                return (
+                                                    <div
+                                                        key={d.id}
+                                                        className="bg-bgHighlight px-2 py-3 rounded-md mr-2"
+                                                        onClick={() => {
+                                                            setCurrentTraining(
+                                                                d.id
+                                                            );
+                                                            setTrainingMenuOpen(
+                                                                true
+                                                            );
+                                                        }}
+                                                    >
+                                                        <p className="text-sm whitespace-nowrap">
+                                                            {
+                                                                d.date.split(
+                                                                    "T"
+                                                                )[0]
+                                                            }
+                                                        </p>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
                                     </div>
                                     <p></p>
                                 </div>
