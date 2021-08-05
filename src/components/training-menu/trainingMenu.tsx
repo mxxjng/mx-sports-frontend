@@ -1,10 +1,23 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+
 import Input from "../form/input";
 import TrainingMainMenu from "./trainingMainMenu";
-import { createTrainingSet } from "../../utils/utils";
+import {
+    createTrainingSet,
+    formatDate,
+    calculateWorkloadDifference,
+    calculateWorkload,
+} from "../../utils/utils";
 
-const TrainingMenu = ({ isOpen, close, trainingData, userexerciseId }) => {
+const TrainingMenu = ({
+    isOpen,
+    close,
+    trainingData,
+    userexerciseId,
+    prevTrainingData,
+}) => {
+    const [showLastTraining, setShowLastTraining] = useState(false);
     const [activeMenu, setActiveMenu] = useState("main");
     const [formData, setFormData] = useState({
         reps: "",
@@ -18,6 +31,14 @@ const TrainingMenu = ({ isOpen, close, trainingData, userexerciseId }) => {
     }, [trainingData]);
 
     console.log(exerciseSets);
+
+    const workload = calculateWorkload(exerciseSets);
+    const workloadDifference = calculateWorkloadDifference(
+        workload,
+        prevTrainingData?.userExerciseDataSets
+    );
+
+    console.log(workloadDifference);
 
     const handleInput = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -76,11 +97,12 @@ const TrainingMenu = ({ isOpen, close, trainingData, userexerciseId }) => {
                                 X
                             </p>
                             <h2 className="text-headline font-headline text-xl text-center">
-                                {trainingData?.date?.split("T")[0]}
+                                Training{" "}
+                                {formatDate(trainingData?.date?.split("T")[0])}
                             </h2>
-                            <div className="mb-8">
+                            <div className="mb-36 md:mb-4">
                                 {exerciseSets.length > 0 ? (
-                                    <div>
+                                    <div className="mb-4">
                                         <div className="flex my-2">
                                             <p className="w-1/3 font-semibold text-headline">
                                                 Satz
@@ -123,37 +145,154 @@ const TrainingMenu = ({ isOpen, close, trainingData, userexerciseId }) => {
                                         </p>
                                     </div>
                                 )}
-                            </div>
-                            <form onSubmit={addSet}>
-                                <div className="flex">
-                                    <Input
-                                        className="w-1/2 rounded-md bg-bgHighlight text-headline px-2 py-3 mb-3 mr-1"
-                                        placeHolder="Gewicht"
-                                        type="number"
-                                        required
-                                        handleChange={handleInput}
-                                        name="weight"
-                                        value={formData.weight}
-                                        min={1}
-                                    />
-                                    <Input
-                                        className="w-1/2 rounded-md bg-bgHighlight text-headline px-2 py-3 mb-3 ml-1"
-                                        placeHolder="Wiederholungen"
-                                        type="number"
-                                        required
-                                        handleChange={handleInput}
-                                        name="reps"
-                                        value={formData.reps}
-                                        min={1}
-                                    />
+                                <div>
+                                    {prevTrainingData && (
+                                        <div>
+                                            <div
+                                                className="bg-bgHighlight p-2 rounded md flex justify-between items-center my-2"
+                                                onClick={() =>
+                                                    setShowLastTraining(
+                                                        !showLastTraining
+                                                    )
+                                                }
+                                            >
+                                                <h3 className="text-headline font-text font-semibold text-sm">
+                                                    Letztes Training anzeigen
+                                                </h3>
+                                                <p className="font-semibold text-headline">
+                                                    {showLastTraining
+                                                        ? `-`
+                                                        : `+`}
+                                                </p>
+                                            </div>
+
+                                            <div>
+                                                <AnimatePresence>
+                                                    {showLastTraining && (
+                                                        <motion.div
+                                                            initial={{
+                                                                opacity: 0,
+                                                            }}
+                                                            animate={{
+                                                                opacity: 1,
+                                                                translateY: 0,
+                                                            }}
+                                                            exit={{
+                                                                opacity: 0,
+                                                            }}
+                                                            transition={{
+                                                                duration: 0.3,
+                                                            }}
+                                                        >
+                                                            <div className="flex my-2">
+                                                                <p className="w-1/3 font-semibold text-headline">
+                                                                    Satz
+                                                                </p>
+                                                                <p className="w-1/3 font-semibold text-headline">
+                                                                    Gewicht
+                                                                </p>
+                                                                <p className="w-1/3 font-semibold text-headline">
+                                                                    WDH
+                                                                </p>
+                                                            </div>
+                                                            {prevTrainingData?.userExerciseDataSets.map(
+                                                                (d, index) => {
+                                                                    return (
+                                                                        <div
+                                                                            className={`${
+                                                                                index %
+                                                                                    2 ===
+                                                                                0
+                                                                                    ? `bg-bgHighlight`
+                                                                                    : ``
+                                                                            } flex p-2 rounded-md`}
+                                                                            key={
+                                                                                d.id ||
+                                                                                d.setNumber
+                                                                            }
+                                                                        >
+                                                                            <p className="w-1/3 ">
+                                                                                {
+                                                                                    d.setNumber
+                                                                                }
+                                                                            </p>
+                                                                            <p className="w-1/3 ">
+                                                                                {
+                                                                                    d.weight
+                                                                                }
+                                                                            </p>
+                                                                            <p className="w-1/3 ">
+                                                                                {
+                                                                                    d.reps
+                                                                                }
+                                                                            </p>
+                                                                        </div>
+                                                                    );
+                                                                }
+                                                            )}
+                                                        </motion.div>
+                                                    )}
+                                                </AnimatePresence>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
-                                <button
-                                    className="w-full mb-2 text-headline px-4 py-2 font-headline rounded-md bg-primary"
-                                    type="submit"
-                                >
-                                    Satz hinzufügen
-                                </button>
-                            </form>
+                                {exerciseSets.length > 0 && (
+                                    <div className="my-2">
+                                        <h3 className="text-headline font-text font-semibold">
+                                            Trainings Workload:
+                                        </h3>
+                                        <p className=" text-2xl">
+                                            <span className="text-primary font-semibold">
+                                                {workload}
+                                            </span>{" "}
+                                            |{" "}
+                                            {workloadDifference >= 0 ? (
+                                                <span>
+                                                    + {workloadDifference}
+                                                </span>
+                                            ) : (
+                                                <span>
+                                                    {" "}
+                                                    {workloadDifference}
+                                                </span>
+                                            )}
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                            <div className="fixed md:static bottom-0 left-0 w-full  p-4 md:p-0 bg-bg">
+                                <form onSubmit={addSet}>
+                                    <div className="flex">
+                                        <Input
+                                            className="w-1/2 rounded-md bg-bgHighlight text-headline px-2 py-3 mb-3 mr-1"
+                                            placeHolder="Gewicht"
+                                            type="number"
+                                            required
+                                            handleChange={handleInput}
+                                            name="weight"
+                                            value={formData.weight}
+                                            min={1}
+                                        />
+                                        <Input
+                                            className="w-1/2 rounded-md bg-bgHighlight text-headline px-2 py-3 mb-3 ml-1"
+                                            placeHolder="Wiederholungen"
+                                            type="number"
+                                            required
+                                            handleChange={handleInput}
+                                            name="reps"
+                                            value={formData.reps}
+                                            min={1}
+                                        />
+                                    </div>
+                                    <button
+                                        className="w-full mb-2 text-headline px-4 py-2 font-headline rounded-md bg-primary"
+                                        type="submit"
+                                    >
+                                        Satz hinzufügen
+                                    </button>
+                                </form>
+                            </div>
                             <div className="relative">
                                 {/* 
                                 

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { API_URL } from "./constants";
+import { UserExerciseDataSet } from "../interfaces/interfaces";
 
 export const makeRequest = async (url, method, payLoad?) => {
     try {
@@ -105,4 +106,39 @@ export const createTrainingSet = async (
     } catch (error) {
         console.log(error);
     }
+};
+
+/**
+ * formats a date string from 2020-04-28 -> 28.04.2020
+ * @param {string} dateString
+ * @returns {string}
+ */
+export const formatDate = (dateString: string): string => {
+    let split = dateString.split("-");
+    return `${split[2]}.${split[1]}.${split[0]}`;
+};
+
+/**
+ * Calculates the difference between the current workout workload and the past workout workload
+ * @param {number} currentWorkload
+ * @param {array} prevTrainingData
+ * @returns {number}
+ */
+export const calculateWorkloadDifference = (
+    currentWorkload: number,
+    prevTrainingData: UserExerciseDataSet[] | null
+): number => {
+    if (!prevTrainingData) return 0;
+    return currentWorkload - calculateWorkload(prevTrainingData);
+};
+
+/**
+ * Calculates the workload of an exercise by multiplying reps * weight + sets
+ * @param {array} data
+ * @returns {number}
+ */
+export const calculateWorkload = (data: UserExerciseDataSet[]): number => {
+    return data.reduce((acc, currentVal) => {
+        return (acc += currentVal.reps * currentVal.weight);
+    }, 0);
 };
