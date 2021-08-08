@@ -171,6 +171,16 @@ table {
     border-bottom: 1px solid #24252f;
 }
 
+.light-shadow {
+    box-shadow: 0px 4px 19px 10px rgba(111, 111, 111, 0.25);
+}
+
+.align-avatar {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* CSS Spinner */
 .lds-roller {
     display: inline-block;

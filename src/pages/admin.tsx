@@ -45,8 +45,7 @@ export default function Admin() {
                                     categories={data}
                                 />
                                 <h1 className="text-2xl md:text-4xl text-headline font-headline my-2">
-                                    Willkommen {auth.user.firstName}{" "}
-                                    {auth.user.lastName}
+                                    Admin Dashboard
                                 </h1>
                                 <div
                                     onClick={() => setAdminMenuOpen(true)}

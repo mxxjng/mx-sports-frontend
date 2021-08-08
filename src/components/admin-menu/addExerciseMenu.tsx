@@ -63,6 +63,7 @@ const AddExerciseMenu = ({ activeMenu, setActiveMenu, categories }) => {
                                 maxLength={450}
                                 rows={4}
                                 name="description"
+                                required
                             />
                             <select
                                 name="exerciseCategoryId"
@@ -71,6 +72,7 @@ const AddExerciseMenu = ({ activeMenu, setActiveMenu, categories }) => {
                                 placeholder="Kategorie"
                                 onChange={handleData}
                                 value={formData.exerciseCategoryId}
+                                required
                             >
                                 <option
                                     value=""
@@ -98,6 +100,7 @@ const AddExerciseMenu = ({ activeMenu, setActiveMenu, categories }) => {
                                 placeholder="Einheit"
                                 onChange={handleData}
                                 value={formData.unit}
+                                required
                             >
                                 <option
                                     value=""
