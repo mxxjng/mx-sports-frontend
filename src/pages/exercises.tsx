@@ -2,7 +2,6 @@ import { useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 
 import Layout from "../components/layout";
 import { useAuth } from "../contexts/auth";

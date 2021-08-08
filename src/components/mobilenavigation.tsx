@@ -8,7 +8,7 @@ import { useAuth } from "../contexts/auth";
 
 const MobileNavigation = (props) => {
     const router = useRouter();
-    const auth: any = useAuth();
+    const auth = useAuth();
 
     const handleLogout = (e) => {
         auth.logout();
@@ -97,80 +97,101 @@ const MobileNavigation = (props) => {
                         </div>
                     </Link>
                 </div>
-                <div onClick={handleLogout}>
-                    <svg
-                        width="21"
-                        height="20"
-                        viewBox="0 0 21 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="mx-auto mb-1"
-                    >
-                        <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M9.31924 20H4.43324C1.98924 20 0.000244141 18.011 0.000244141 15.565V4.436C0.000244141 1.99 1.98924 0 4.43324 0H9.30824C11.7542 0 13.7442 1.99 13.7442 4.436V5.368C13.7442 5.782 13.4082 6.118 12.9942 6.118C12.5802 6.118 12.2442 5.782 12.2442 5.368V4.436C12.2442 2.816 10.9272 1.5 9.30824 1.5H4.43324C2.81624 1.5 1.50024 2.816 1.50024 4.436V15.565C1.50024 17.184 2.81624 18.5 4.43324 18.5H9.31924C10.9312 18.5 12.2442 17.188 12.2442 15.576V14.633C12.2442 14.219 12.5802 13.883 12.9942 13.883C13.4082 13.883 13.7442 14.219 13.7442 14.633V15.576C13.7442 18.016 11.7582 20 9.31924 20"
-                            fill="#B5BBC9"
-                        />
-                        <mask
-                            id="mask0"
-                            mask-type="alpha"
-                            maskUnits="userSpaceOnUse"
-                            x="6"
-                            y="9"
-                            width="15"
-                            height="2"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                clipRule="evenodd"
-                                d="M6.99609 9.25H20.537V10.75H6.99609V9.25Z"
-                                fill="#B5BBC9"
-                            />
-                        </mask>
-                        <g mask="url(#mask0)">
-                            <path
-                                fillRule="evenodd"
-                                clipRule="evenodd"
-                                d="M19.7871 10.75H7.74609C7.33209 10.75 6.99609 10.414 6.99609 10C6.99609 9.586 7.33209 9.25 7.74609 9.25H19.7871C20.2011 9.25 20.5371 9.586 20.5371 10C20.5371 10.414 20.2011 10.75 19.7871 10.75"
-                                fill="#B5BBC9"
-                            />
-                        </g>
-                        <mask
-                            id="mask1"
-                            mask-type="alpha"
-                            maskUnits="userSpaceOnUse"
-                            x="16"
-                            y="6"
-                            width="5"
-                            height="8"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                clipRule="evenodd"
-                                d="M16.1096 6.33527H20.537V13.666H16.1096V6.33527Z"
-                                fill="#B5BBC9"
-                            />
-                        </mask>
-                        <g mask="url(#mask1)">
-                            <path
-                                fillRule="evenodd"
-                                clipRule="evenodd"
-                                d="M16.8594 13.666C16.6674 13.666 16.4744 13.593 16.3284 13.445C16.0364 13.151 16.0374 12.677 16.3304 12.385L18.7244 10L16.3304 7.61602C16.0374 7.32402 16.0354 6.85002 16.3284 6.55602C16.6204 6.26202 17.0944 6.26202 17.3884 6.55402L20.3164 9.46902C20.4584 9.60902 20.5374 9.80102 20.5374 10C20.5374 10.199 20.4584 10.391 20.3164 10.531L17.3884 13.447C17.2424 13.593 17.0504 13.666 16.8594 13.666"
-                                fill="#B5BBC9"
-                            />
-                        </g>
-                    </svg>
-                    <p
-                        className={`${
-                            router.pathname === "/logout"
-                                ? "text-primary"
-                                : "text-textColor"
-                        } text-xs`}
-                    >
-                        Logout
-                    </p>
-                </div>
+                {auth?.user?.role === "ADMIN" && (
+                    <div>
+                        <Link href="/admin">
+                            <div>
+                                <svg
+                                    width="16"
+                                    height="20"
+                                    viewBox="0 0 16 20"
+                                    className="mx-auto mb-1"
+                                    fill={
+                                        router.pathname === "/admin"
+                                            ? "#7668CB"
+                                            : "#B5BBC9"
+                                    }
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <mask
+                                        id="mask0"
+                                        mask-type="alpha"
+                                        maskUnits="userSpaceOnUse"
+                                        x="0"
+                                        y="12"
+                                        width="16"
+                                        height="9"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M0 12.5779H15.9435V20.0001H0V12.5779Z"
+                                            fill={
+                                                router.pathname === "/admin"
+                                                    ? "#7668CB"
+                                                    : "#B5BBC9"
+                                            }
+                                        />
+                                    </mask>
+                                    <g mask="url(#mask0)">
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M7.9727 14.0877C3.68382 14.0877 1.50969 14.8245 1.50969 16.2789C1.50969 17.7464 3.68382 18.4903 7.9727 18.4903C12.2606 18.4903 14.4337 17.7535 14.4337 16.299C14.4337 14.8315 12.2606 14.0877 7.9727 14.0877M7.9727 20.0001C6.00088 20.0001 -0.00012207 20.0001 -0.00012207 16.2789C-0.00012207 12.9614 4.55046 12.5779 7.9727 12.5779C9.94452 12.5779 15.9435 12.5779 15.9435 16.2991C15.9435 19.6166 11.3939 20.0001 7.9727 20.0001"
+                                            fill={
+                                                router.pathname === "/admin"
+                                                    ? "#7668CB"
+                                                    : "#B5BBC9"
+                                            }
+                                        />
+                                    </g>
+                                    <mask
+                                        id="mask1"
+                                        mask-type="alpha"
+                                        maskUnits="userSpaceOnUse"
+                                        x="2"
+                                        y="0"
+                                        width="12"
+                                        height="11"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M2.62695 0.00012207H13.3165V10.6882H2.62695V0.00012207Z"
+                                            fill={
+                                                router.pathname === "/admin"
+                                                    ? "#7668CB"
+                                                    : "#B5BBC9"
+                                            }
+                                        />
+                                    </mask>
+                                    <g mask="url(#mask1)">
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M7.97268 1.43707C5.81768 1.43707 4.06428 3.18947 4.06428 5.34447C4.05723 7.49243 5.79755 9.24382 7.9435 9.25187L7.97268 9.97054V9.25187C10.1267 9.25187 11.8791 7.49847 11.8791 5.34447C11.8791 3.18947 10.1267 1.43707 7.97268 1.43707M7.97273 10.6882H7.94052C4.99941 10.6792 2.61692 8.28058 2.62698 5.34148C2.62698 2.39734 5.02457 -0.000244141 7.97273 -0.000244141C10.9199 -0.000244141 13.3165 2.39734 13.3165 5.3445C13.3165 8.29165 10.9199 10.6882 7.97273 10.6882"
+                                            fill={
+                                                router.pathname === "/admin"
+                                                    ? "#7668CB"
+                                                    : "#B5BBC9"
+                                            }
+                                        />
+                                    </g>
+                                </svg>
+
+                                <p
+                                    className={`${
+                                        router.pathname === "/admin"
+                                            ? "text-primary"
+                                            : "text-textColor"
+                                    } text-xs`}
+                                >
+                                    Admin
+                                </p>
+                            </div>
+                        </Link>
+                    </div>
+                )}
             </div>
         </div>
     );
