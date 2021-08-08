@@ -8,7 +8,7 @@ import { useAuth } from "../contexts/auth";
 
 const Navigation = () => {
     const router = useRouter();
-    const auth: any = useAuth();
+    const auth = useAuth();
 
     const handleLogout = (e) => {
         auth.logout();
@@ -72,6 +72,16 @@ const Navigation = () => {
                     >
                         <Link href="/exercises">Exercises</Link>
                     </div>
+                    {auth?.user?.role === "ADMIN" && (
+                        <div
+                            className={`${
+                                router.pathname === "/admin" &&
+                                "border-b-2 border-primary"
+                            } p-2`}
+                        >
+                            <Link href="/admin">Admin</Link>
+                        </div>
+                    )}
                     <div>
                         <p className="text-headline p-2 font-headline">
                             {auth?.user?.firstName} {auth?.user?.lastName}

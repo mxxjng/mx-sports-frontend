@@ -6,6 +6,7 @@ export interface User {
     createdAt?: string;
     height?: number;
     weight?: number;
+    role?: string;
 }
 
 export interface UserExercise {
