@@ -10,16 +10,32 @@ import { API_URL } from "../utils/constants";
 import CreateExercise from "../components/create-exercise/createExercise";
 import { UserExercise } from "../interfaces/interfaces";
 import Spinner from "../components/spinner";
+import FilterMenu from "../components/filter-menu/filterMenu";
 
 export default function Dashboard() {
     const [openCreate, setOpenCreate] = useState(false);
+    const [openFilterMenu, setOpenFilterMenu] = useState(false);
+    const [filterCategory, setFilterCategory] = useState(() => {
+        if (process.browser) {
+            return window?.localStorage?.getItem("mx-filter") || "";
+        }
+
+        return "";
+    });
     const router = useRouter();
     const auth = useAuth();
     const { status, error, data } = useFetch<UserExercise[]>(
-        `${API_URL}/api/v1/userexercise`,
+        `${API_URL}/api/v1/userexercise${
+            filterCategory !== "" ? `?category=${filterCategory}` : ``
+        }`,
         "GET",
-        [auth]
+        [auth, filterCategory]
     );
+
+    const handleFilterChange = (category) => {
+        setFilterCategory(category);
+        localStorage.setItem("mx-filter", category);
+    };
 
     console.log(auth);
     console.log(data);
@@ -42,10 +58,74 @@ export default function Dashboard() {
                         }}
                         isOpen={openCreate}
                     />
+                    <FilterMenu
+                        close={() => {
+                            setOpenFilterMenu(false);
+                        }}
+                        isOpen={openFilterMenu}
+                        setFilter={handleFilterChange}
+                        results={data?.length}
+                        filter={filterCategory}
+                    />
                     <div className="max-w-7xl mx-auto px-4 mb-40">
-                        <h1 className="text-2xl md:text-4xl text-headline font-headline my-3">
-                            Meine Übungen
-                        </h1>
+                        <div className="flex justify-between items-center">
+                            <h1 className="text-2xl md:text-4xl text-headline font-headline my-3">
+                                Meine Übungen
+                            </h1>
+                            <div
+                                onClick={() => setOpenFilterMenu(true)}
+                                className="cursor-pointer"
+                            >
+                                <svg
+                                    width="20"
+                                    height="19"
+                                    viewBox="0 0 20 19"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        clipRule="evenodd"
+                                        d="M8.09157 15.5347H0.89039C0.417244 15.5347 0.0332418 15.1507 0.0332418 14.6776C0.0332418 14.2044 0.417244 13.8204 0.89039 13.8204H8.09157C8.56472 13.8204 8.94872 14.2044 8.94872 14.6776C8.94872 15.1507 8.56472 15.5347 8.09157 15.5347Z"
+                                        fill={
+                                            filterCategory !== ""
+                                                ? "#7668CB"
+                                                : "white"
+                                        }
+                                    />
+                                    <path
+                                        fillRule="evenodd"
+                                        clipRule="evenodd"
+                                        d="M18.504 4.45763H11.3039C10.8308 4.45763 10.4468 4.07362 10.4468 3.60048C10.4468 3.12733 10.8308 2.74333 11.3039 2.74333H18.504C18.9771 2.74333 19.3611 3.12733 19.3611 3.60048C19.3611 4.07362 18.9771 4.45763 18.504 4.45763Z"
+                                        fill={
+                                            filterCategory !== ""
+                                                ? "#7668CB"
+                                                : "white"
+                                        }
+                                    />
+                                    <path
+                                        fillRule="evenodd"
+                                        clipRule="evenodd"
+                                        d="M3.55749 1.7143C2.54148 1.7143 1.71405 2.53259 1.71405 3.53945C1.71405 4.54517 2.54148 5.36232 3.55749 5.36232C4.57464 5.36232 5.40093 4.54517 5.40093 3.53945C5.40093 2.53259 4.57464 1.7143 3.55749 1.7143ZM3.55749 7.07661C1.59634 7.07661 -0.000244141 5.49032 -0.000244141 3.53945C-0.000244141 1.58858 1.59634 0 3.55749 0C5.51979 0 7.11523 1.58858 7.11523 3.53945C7.11523 5.49032 5.51979 7.07661 3.55749 7.07661Z"
+                                        fill={
+                                            filterCategory !== ""
+                                                ? "#7668CB"
+                                                : "white"
+                                        }
+                                    />
+                                    <path
+                                        fillRule="evenodd"
+                                        clipRule="evenodd"
+                                        d="M16.4432 12.8092C15.426 12.8092 14.5986 13.6275 14.5986 14.6332C14.5986 15.6401 15.426 16.4572 16.4432 16.4572C17.4592 16.4572 18.2855 15.6401 18.2855 14.6332C18.2855 13.6275 17.4592 12.8092 16.4432 12.8092ZM16.4432 18.1715C14.4809 18.1715 12.8843 16.5841 12.8843 14.6332C12.8843 12.6824 14.4809 11.0949 16.4432 11.0949C18.4043 11.0949 19.9998 12.6824 19.9998 14.6332C19.9998 16.5841 18.4043 18.1715 16.4432 18.1715Z"
+                                        fill={
+                                            filterCategory !== ""
+                                                ? "#7668CB"
+                                                : "white"
+                                        }
+                                    />
+                                </svg>
+                            </div>
+                        </div>
                         <div
                             onClick={() => setOpenCreate(true)}
                             className="fixed w-14 h-14 z-50 rounded-full bottom-16  right-4 md:right-12 bg-primary flex items-center justify-center cursor-pointer"
@@ -138,10 +218,20 @@ export default function Dashboard() {
                                             })}
                                         </div>
                                     ) : (
-                                        <p className="text-headline">
-                                            Noch keine Übungen angelegt. Lege
-                                            jetzt eine Übung an
-                                        </p>
+                                        <div>
+                                            {filterCategory !== "" ? (
+                                                <p className="text-sm">
+                                                    Keine Übungen in dieser
+                                                    Kategorie angelegt. Lege
+                                                    jetzt eine Übung an!
+                                                </p>
+                                            ) : (
+                                                <p className="text-sm">
+                                                    Noch keine Übungen angelegt.
+                                                    Lege jetzt eine Übung an!
+                                                </p>
+                                            )}
+                                        </div>
                                     )}
                                 </div>
                             ) : (

@@ -59,7 +59,7 @@ const Navigation = () => {
                         animate={{ translateX: 0 }}
                         exit={{ translateX: -200 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed top-0 left-0 h-full w-10/12 bg-bg p-4 z-highest light-shadow"
+                        className="fixed top-0 left-0 h-full w-10/12 bg-bg p-4 z-highest "
                     >
                         <h2 className="text-headline font-headline text-xl">
                             {auth?.user?.firstName} {auth?.user?.lastName}
@@ -140,7 +140,7 @@ const Navigation = () => {
                                             : "text-textColor"
                                     } `}
                                 >
-                                    Logout
+                                    Ausloggen
                                 </p>
                             </div>
                         </div>

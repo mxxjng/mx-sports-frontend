@@ -1,12 +1,16 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import AddComment from "./addComment";
-import AddTraining from "./addTraining";
-import DeleteMenu from "./deleteMenu";
-import MainMenu from "./mainMenu";
-import OneRepMaxMenu from "./oneRepMaxMenu";
 
-const UserExerciseMenu = ({ isOpen, close, exerciseId }) => {
+import { formatDate } from "../../utils/utils";
+
+const OneRepMaxModal = ({
+    isOpen,
+    close,
+    data,
+    setCurrentTraining,
+    setTrainingMenuOpen,
+    unit,
+}) => {
     const [activeMenu, setActiveMenu] = useState("main");
     return (
         <div>
@@ -14,7 +18,7 @@ const UserExerciseMenu = ({ isOpen, close, exerciseId }) => {
                 {isOpen && (
                     <motion.div
                         key="wrapper"
-                        className="fixed w-full h-full dark-opacity top-0 left-0 flex justify-center items-end md:items-center z-highest"
+                        className="fixed w-full h-full dark-opacity top-0 left-0 flex justify-center items-end md:items-center z-10"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -22,14 +26,13 @@ const UserExerciseMenu = ({ isOpen, close, exerciseId }) => {
                     >
                         <motion.div
                             key="modal"
-                            className="w-full md:w-6/12 h-3/6 bg-bg rounded-t-2xl md:rounded-xl p-4 overflow-x-hidden overflow-y-auto"
-                            initial={{ opacity: 0, translateY: 200 }}
-                            animate={{ opacity: 1, translateY: 0 }}
-                            exit={{ opacity: 0, translateY: 200 }}
+                            className="w-full md:w-6/12 h-full md:h-5/6 bg-bg md:rounded-xl p-4 overflow-x-hidden overflow-y-auto"
+                            initial={{ opacity: 0, translateX: -200 }}
+                            animate={{ opacity: 1, translateX: 0 }}
+                            exit={{ opacity: 0, translateX: -200 }}
                             transition={{ duration: 0.3 }}
                         >
                             <div>
-                                <div className="block md:hidden bg-bgHighlight w-20 h-1 rounded-md mx-auto"></div>
                                 <div className="flex justify-end cursor-pointer py-2">
                                     <svg
                                         width="17"
@@ -49,43 +52,26 @@ const UserExerciseMenu = ({ isOpen, close, exerciseId }) => {
                                     </svg>
                                 </div>
                                 <p className="font-semibold text-xss mb-2">
-                                    ÜBUNGEN VERWALTEN
+                                    ALLE MAXIMALKRAFTVERSUCHE
                                 </p>
                                 <div className="relative">
-                                    <MainMenu
-                                        activeMenu={activeMenu}
-                                        setActiveMenu={(menu) =>
-                                            setActiveMenu(menu)
-                                        }
-                                    />
-                                    <DeleteMenu
-                                        activeMenu={activeMenu}
-                                        exerciseId={exerciseId}
-                                        setActiveMenu={(menu) =>
-                                            setActiveMenu(menu)
-                                        }
-                                    />
-                                    <OneRepMaxMenu
-                                        activeMenu={activeMenu}
-                                        exerciseId={exerciseId}
-                                        setActiveMenu={(menu) =>
-                                            setActiveMenu(menu)
-                                        }
-                                    />
-                                    <AddTraining
-                                        activeMenu={activeMenu}
-                                        exerciseId={exerciseId}
-                                        setActiveMenu={(menu) =>
-                                            setActiveMenu(menu)
-                                        }
-                                    />
-                                    <AddComment
-                                        activeMenu={activeMenu}
-                                        exerciseId={exerciseId}
-                                        setActiveMenu={(menu) =>
-                                            setActiveMenu(menu)
-                                        }
-                                    />
+                                    {data.map((d) => {
+                                        return (
+                                            <div
+                                                key={d.id}
+                                                className="bg-bgHighlight px-2 py-3 rounded-md mb-2 flex items-center justify-between"
+                                            >
+                                                <p className="text-sm whitespace-nowrap">
+                                                    {formatDate(
+                                                        d.date.split("T")[0]
+                                                    )}
+                                                </p>
+                                                <p className="text-sm whitespace-nowrap text-headline font-semibold">
+                                                    {d.weight} {unit}
+                                                </p>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         </motion.div>
@@ -95,4 +81,4 @@ const UserExerciseMenu = ({ isOpen, close, exerciseId }) => {
         </div>
     );
 };
-export default UserExerciseMenu;
+export default OneRepMaxModal;

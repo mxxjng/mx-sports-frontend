@@ -27,7 +27,11 @@ module.exports = {
             danger: "#FF968E",
             success: "#28a745",
         },
-        extend: {},
+        extend: {
+            fontSize: {
+                xss: "11px",
+            },
+        },
     },
     variants: {
         extend: {},
