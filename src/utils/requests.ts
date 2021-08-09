@@ -8,7 +8,7 @@ export const createExerciseCategory = async (name: string) => {
             name,
         });
         if (res.data) {
-            alert("Kategorie erstellt");
+            console.log("Kategorie erstellt");
             window.location.reload();
         }
     } catch (error) {
@@ -28,8 +28,68 @@ export const createExercise = async (formData) => {
             image,
         });
         if (res.data) {
-            alert("Übung erstellt");
+            console.log("Übung erstellt");
             window.location.reload();
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const deleteWorkout = async (
+    userExerciseId: string,
+    exerciseDataId: string
+) => {
+    try {
+        const res = await axios.delete(
+            `${API_URL}/api/v1/exercisedata/${userExerciseId}/${exerciseDataId}`
+        );
+
+        if (res.data) {
+            console.log("Training gelöscht");
+            window.location.reload();
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const deleteWorkoutSet = async (
+    userExerciseId: string,
+    exerciseDataId: string,
+    exerciseDataSetId: string
+) => {
+    try {
+        const res = await axios.delete(
+            `${API_URL}/api/v1/exercisedata/set/${userExerciseId}/${exerciseDataId}/${exerciseDataSetId}`
+        );
+
+        if (res.data) {
+            console.log("Satz gelöscht");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const updateWorkoutSet = async (
+    userExerciseId: string,
+    exerciseDataId: string,
+    exerciseDataSetId: string,
+    weight,
+    reps
+) => {
+    try {
+        const res = await axios.patch(
+            `${API_URL}/api/v1/exercisedata/set/${userExerciseId}/${exerciseDataId}/${exerciseDataSetId}`,
+            {
+                weight,
+                reps,
+            }
+        );
+
+        if (res.data) {
+            console.log("Satz geändert");
         }
     } catch (error) {
         console.log(error);

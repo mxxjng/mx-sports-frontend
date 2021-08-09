@@ -2,13 +2,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import Input from "../form/input";
-import TrainingMainMenu from "./trainingMainMenu";
 import {
     createTrainingSet,
     formatDate,
     calculateWorkloadDifference,
     calculateWorkload,
 } from "../../utils/utils";
+import {
+    deleteWorkout,
+    deleteWorkoutSet,
+    updateWorkoutSet,
+} from "../../utils/requests";
+import SetModule from "../set-module/setModule";
 
 const TrainingMenu = ({
     isOpen,
@@ -19,6 +24,10 @@ const TrainingMenu = ({
     unit,
 }) => {
     const [showLastTraining, setShowLastTraining] = useState(false);
+    const [openDeleteModal, setOpenDeleteModal] = useState(false);
+    const [openEditSet, setOpenEditSet] = useState(false);
+    const [currentSetId, setCurrentSetId] = useState("");
+    const [currentSetNumber, setCurrentSetNumber] = useState(0);
     const [activeMenu, setActiveMenu] = useState("main");
     const [formData, setFormData] = useState({
         reps: "",
@@ -27,19 +36,23 @@ const TrainingMenu = ({
     const [exerciseSets, setExerciseSets] = useState(
         () => trainingData?.userExerciseDataSets || []
     );
-    useEffect(() => {
-        setExerciseSets(trainingData?.userExerciseDataSets || []);
-    }, [trainingData]);
-
-    console.log(exerciseSets);
-
     const workload = calculateWorkload(exerciseSets);
     const workloadDifference = calculateWorkloadDifference(
         workload,
         prevTrainingData?.userExerciseDataSets
     );
 
-    console.log(workloadDifference);
+    const currentSet = getCurrentSet(currentSetId);
+
+    useEffect(() => {
+        setExerciseSets(trainingData?.userExerciseDataSets || []);
+    }, [trainingData]);
+
+    function getCurrentSet(id) {
+        return exerciseSets.find((s) => s.id === id);
+    }
+
+    console.log(exerciseSets);
 
     const handleInput = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -66,8 +79,91 @@ const TrainingMenu = ({
         setExerciseSets(sets);
     };
 
+    const deleteSet = (e, id) => {
+        e.preventDefault();
+        deleteWorkoutSet(userexerciseId, trainingData?.id, id);
+        let sets = [...exerciseSets];
+        let index = sets.findIndex((s) => s.id === id);
+        sets.splice(index, 1);
+        setExerciseSets(sets);
+    };
+
+    const updateSet = (e, id, weight, reps) => {
+        e.preventDefault();
+        updateWorkoutSet(
+            userexerciseId,
+            trainingData?.id,
+            id,
+            parseInt(weight),
+            parseInt(reps)
+        );
+        let sets = [...exerciseSets];
+        let index = sets.findIndex((s) => s.id === id);
+        sets[index].reps = reps;
+        sets[index].weight = weight;
+        setExerciseSets(sets);
+    };
+
     return (
         <div>
+            <SetModule
+                isOpen={openEditSet}
+                close={() => setOpenEditSet(false)}
+                set={currentSet}
+                setNumber={currentSetNumber}
+                deleteSet={deleteSet}
+                updateSet={updateSet}
+            />
+            <AnimatePresence>
+                {openDeleteModal && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="fixed w-full h-full dark-opacity top-0 left-0 flex justify-center items-center z-very-highest"
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, translateY: 100 }}
+                            animate={{ opacity: 1, translateY: 0 }}
+                            exit={{ opacity: 0, translateY: 100 }}
+                            transition={{ duration: 0.3 }}
+                            className="w-full mx-4 md:mx-0 md:w-3/12 bg-bg rounded-xl px-4 py-6 overflow-x-hidden overflow-y-auto mb-8"
+                        >
+                            <div className="text-center box-border">
+                                <h2 className="text-headline text-xl font-headline mb-2">
+                                    Trainingseinheit löschen
+                                </h2>
+                                <p className="mb-4 text-sm">
+                                    Möchtest du diese Trainingseinheit wirklich
+                                    löschen?
+                                </p>
+                                <div className="block box-border">
+                                    <button
+                                        className="w-full mb-2 text-headline px-4 py-2 font-headline rounded-md bg-primary"
+                                        onClick={() =>
+                                            deleteWorkout(
+                                                userexerciseId,
+                                                trainingData?.id
+                                            )
+                                        }
+                                    >
+                                        Ja
+                                    </button>
+                                    <button
+                                        className="w-full mb-2 text-headline px-4 py-2 font-headline rounded-md border border-primary "
+                                        onClick={() =>
+                                            setOpenDeleteModal(false)
+                                        }
+                                    >
+                                        Nein
+                                    </button>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -80,20 +176,39 @@ const TrainingMenu = ({
                     >
                         <motion.div
                             key="modal"
-                            className="w-full md:w-6/12 h-5/6 bg-bg rounded-t-2xl md:rounded-xl p-4 overflow-x-hidden overflow-y-auto"
+                            className="w-full md:w-10/12 lg:w-8/12 xl:w-6/12 h-5/6 bg-bg rounded-t-2xl md:rounded-xl p-4 overflow-x-hidden overflow-y-auto"
                             initial={{ opacity: 0, translateY: 200 }}
                             animate={{ opacity: 1, translateY: 0 }}
                             exit={{ opacity: 0, translateY: 200 }}
                             transition={{ duration: 0.3 }}
                         >
                             <div className="block md:hidden bg-bgHighlight w-20 h-1 rounded-md mx-auto"></div>
-                            <div className="flex justify-end cursor-pointer py-2">
+                            <div className="flex justify-between items-center py-2">
+                                <div
+                                    className="w-8 h-8 rounded-full relative cursor-pointer"
+                                    onClick={() => setOpenDeleteModal(true)}
+                                >
+                                    <svg
+                                        width="21"
+                                        height="6"
+                                        viewBox="0 0 21 6"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="absolute align-avatar"
+                                    >
+                                        <path
+                                            d="M2.80769 5.11538C2.19565 5.11538 1.60868 4.87225 1.17591 4.43948C0.743131 4.0067 0.5 3.41973 0.5 2.80769C0.5 2.19565 0.743131 1.60868 1.17591 1.17591C1.60868 0.743131 2.19565 0.5 2.80769 0.5C3.41973 0.5 4.0067 0.743131 4.43948 1.17591C4.87225 1.60868 5.11538 2.19565 5.11538 2.80769C5.11538 3.41973 4.87225 4.0067 4.43948 4.43948C4.0067 4.87225 3.41973 5.11538 2.80769 5.11538ZM10.5 5.11538C9.88796 5.11538 9.30099 4.87225 8.86821 4.43948C8.43544 4.0067 8.19231 3.41973 8.19231 2.80769C8.19231 2.19565 8.43544 1.60868 8.86821 1.17591C9.30099 0.743131 9.88796 0.5 10.5 0.5C11.112 0.5 11.699 0.743131 12.1318 1.17591C12.5646 1.60868 12.8077 2.19565 12.8077 2.80769C12.8077 3.41973 12.5646 4.0067 12.1318 4.43948C11.699 4.87225 11.112 5.11538 10.5 5.11538ZM18.1923 5.11538C17.5803 5.11538 16.9933 4.87225 16.5605 4.43948C16.1277 4.0067 15.8846 3.41973 15.8846 2.80769C15.8846 2.19565 16.1277 1.60868 16.5605 1.17591C16.9933 0.743131 17.5803 0.5 18.1923 0.5C18.8043 0.5 19.3913 0.743131 19.8241 1.17591C20.2569 1.60868 20.5 2.19565 20.5 2.80769C20.5 3.41973 20.2569 4.0067 19.8241 4.43948C19.3913 4.87225 18.8043 5.11538 18.1923 5.11538Z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </div>
                                 <svg
                                     width="17"
                                     height="17"
                                     viewBox="0 0 17 17"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
+                                    className="cursor-pointer"
                                     onClick={() => {
                                         close();
                                         setActiveMenu("main");
@@ -130,11 +245,18 @@ const TrainingMenu = ({
                                                         index % 2 === 0
                                                             ? `bg-bgHighlight`
                                                             : ``
-                                                    } flex p-2 rounded-md`}
+                                                    } flex p-2 rounded-md cursor-pointer`}
                                                     key={d.id || d.setNumber}
+                                                    onClick={() => {
+                                                        setCurrentSetId(d.id);
+                                                        setOpenEditSet(true);
+                                                        setCurrentSetNumber(
+                                                            index + 1
+                                                        );
+                                                    }}
                                                 >
                                                     <p className="w-1/3 ">
-                                                        {d.setNumber}
+                                                        {index + 1}
                                                     </p>
                                                     <p className="w-1/3 ">
                                                         {d.weight} {unit}

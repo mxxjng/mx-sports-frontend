@@ -139,7 +139,7 @@ export default function Exercise() {
                                         <div>
                                             {data.oneRepMax.length > 0 ? (
                                                 <div>
-                                                    <p className="font-semibold">
+                                                    <p className="font-semibold text-primary">
                                                         {
                                                             data.oneRepMax[
                                                                 data.oneRepMax
@@ -216,7 +216,7 @@ export default function Exercise() {
                                                             return (
                                                                 <div
                                                                     key={d.id}
-                                                                    className="bg-bgHighlight px-2 py-3 rounded-md mr-2"
+                                                                    className="bg-bgHighlight px-2 py-3 rounded-md mr-2 cursor-pointer"
                                                                     onClick={() => {
                                                                         setCurrentTraining(
                                                                             d.id

@@ -20,7 +20,7 @@ const CreateExercise = ({ close, isOpen }) => {
                 >
                     <motion.div
                         key="modal"
-                        className="w-full md:w-6/12 h-4/6 bg-bg rounded-t-2xl md:rounded-xl p-4 overflow-x-hidden overflow-y-auto"
+                        className="w-full md:w-6/12 lg:w-5/12 xl:w-4/12 h-4/6 bg-bg rounded-t-2xl md:rounded-xl p-4 overflow-x-hidden overflow-y-auto"
                         initial={{ opacity: 0, translateY: 200 }}
                         animate={{ opacity: 1, translateY: 0 }}
                         exit={{ opacity: 0, translateY: 200 }}

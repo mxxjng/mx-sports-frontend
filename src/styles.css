@@ -22,8 +22,12 @@ body {
     background-color: #181a20;
 }
 
-.z-highest {
+.z-very-highest {
     z-index: 1000000;
+}
+
+.z-highest {
+    z-index: 1000;
 }
 
 button:focus {

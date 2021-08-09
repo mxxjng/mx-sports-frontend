@@ -31,7 +31,7 @@ export const createUserExercise = async (id) => {
     try {
         const res = await axios.post(`${API_URL}/api/v1/userexercise/${id}`);
         if (res.data) {
-            alert("Übung erstellt " + id);
+            console.log("Übung erstellt " + id);
             window.location.reload();
         }
     } catch (error) {
@@ -43,7 +43,7 @@ export const deleteUserExercise = async (id) => {
     try {
         const res = await axios.delete(`${API_URL}/api/v1/userexercise/${id}`);
         if (res.data) {
-            alert("Übung gelöscht " + id);
+            console.log("Übung gelöscht " + id);
             window.location.pathname = "/exercises";
         }
     } catch (error) {
@@ -62,7 +62,7 @@ export const createOneRepMax = async (id, payLoad) => {
             }
         );
         if (res.data) {
-            alert("1 RM Erstellt");
+            console.log("1 RM Erstellt");
             window.location.reload();
         }
     } catch (error) {
@@ -76,7 +76,7 @@ export const createTraining = async (id, date) => {
             date,
         });
         if (res.data) {
-            alert("Training erstellt");
+            console.log("Training erstellt");
             window.location.reload();
         }
     } catch (error) {
@@ -101,7 +101,7 @@ export const createTrainingSet = async (
             }
         );
         if (res.data) {
-            alert("Training erstellt");
+            console.log("Training erstellt");
         }
     } catch (error) {
         console.log(error);
