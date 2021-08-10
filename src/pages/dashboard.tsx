@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import { useRouter } from "next/router";
 import { useAuth } from "../contexts/auth";
 

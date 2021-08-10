@@ -1,4 +1,4 @@
-import "../styles.css";
+import "../styles/styles.css";
 import "../fonts/fonts.css";
 import { AuthProvider } from "../contexts/auth";
 

@@ -3,14 +3,14 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import { useAuth } from "../contexts/auth";
-import { useFetch } from "../hooks/fetchData";
+import { useFetch } from "../hooks/useFetch";
 import { API_URL } from "../utils/constants";
-import CreateExercise from "../components/create-exercise/createExercise";
+import CreateExercise from "../components/CreateExercise/CreateExercise";
 import { UserExercise } from "../interfaces/interfaces";
-import Spinner from "../components/spinner";
-import FilterMenu from "../components/filter-menu/filterMenu";
+import Spinner from "../components/Spinner";
+import FilterMenu from "../components/FilterMenu/FilterMenu";
 
 export default function Dashboard() {
     const [openCreate, setOpenCreate] = useState(false);

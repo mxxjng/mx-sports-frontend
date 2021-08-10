@@ -1,21 +1,21 @@
 import Head from "next/head";
 
-import Layout from "../../components/layout";
-import Timer from "../../components/timer";
-import Spinner from "../../components/spinner";
-import Chart from "../../components/chart";
-import DeleteExercise from "../../components/delete-exercise/deleteExercise";
+import Layout from "../../components/Layout";
+import Timer from "../../components/Timer";
+import Spinner from "../../components/Spinner";
+import Chart from "../../components/Chart";
+import DeleteExercise from "../../components/DeleteExercise/DeleteExercise";
 import { useRouter } from "next/router";
 import { useAuth } from "../../contexts/auth";
-import { useFetch } from "../../hooks/fetchData";
+import { useFetch } from "../../hooks/useFetch";
 import { API_URL } from "../../utils/constants";
 import { UserExercise } from "../../interfaces/interfaces";
 import { useState } from "react";
-import UserExerciseMenu from "../../components/user-exercise-menu/userExerciseMenu";
-import TrainingMenu from "../../components/training-menu/trainingMenu";
+import UserExerciseMenu from "../../components/UserExerciseMenu/UserExerciseMenu";
+import TrainingMenu from "../../components/TrainingMenu/TrainingMenu";
 import { formatDate } from "../../utils/utils";
-import ExerciseDataModal from "../../components/exercise-data-modal/exerciseDataModal";
-import OneRepMaxModal from "../../components/onerepmax-modal/oneRepMaxModal";
+import ExerciseDataModal from "../../components/ExerciseDataModal/ExerciseDataModal";
+import OneRepMaxModal from "../../components/OneRepMaxModal/OneRepMaxModal";
 
 export default function Exercise() {
     const [optionMenuOpen, setOptionMenuOpen] = useState(false);

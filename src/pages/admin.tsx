@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import { useRouter } from "next/router";
 import { useAuth } from "../contexts/auth";
 import { useState } from "react";
-import AdminMenu from "../components/admin-menu/adminMenu";
-import { useFetch } from "../hooks/fetchData";
+import AdminMenu from "../components/AdminMenu/AdminMenu";
+import { useFetch } from "../hooks/useFetch";
 import { API_URL } from "../utils/constants";
 import { ExerciseCategory } from "../interfaces/interfaces";
 

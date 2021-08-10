@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import { makeRequest } from "../utils/utils";
-import RegisterForm from "../components/registerForm";
+import RegisterForm from "../components/RegisterForm";
 import { API_URL } from "../utils/constants";
 import { useRouter } from "next/router";
 

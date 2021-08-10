@@ -1,7 +1,7 @@
 import Head from "next/head";
 
-import Layout from "../components/layout";
-import LoginForm from "../components/loginForm";
+import Layout from "../components/Layout";
+import LoginForm from "../components/LoginForm";
 import { makeRequest } from "../utils/utils";
 import { API_URL } from "../utils/constants";
 import { useRouter } from "next/router";

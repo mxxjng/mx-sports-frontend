@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TimeIcon from "../components/icons/timeIcon";
+import TimeIcon from "./Icons/TimeIcon";
 
 type TimerProps = {
     timerTime?: number;

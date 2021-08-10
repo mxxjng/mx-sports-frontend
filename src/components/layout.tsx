@@ -1,13 +1,35 @@
 import * as React from "react";
-import Navigation from "./navigation";
-import MobileNavigation from "./mobilenavigation";
+
+import Navigation from "./Navigation/Navigation";
+import BottomNavigation from "./Navigation/BottomNavigation";
 
 const Layout: React.FC = ({ children }): JSX.Element => {
     return (
         <div>
-            <Navigation />
+            <Navigation
+                loggedInItems={[
+                    {
+                        link: "/dashboard",
+                        text: "Dashboard",
+                    },
+                    {
+                        link: "/exercises",
+                        text: "Exercises",
+                    },
+                ]}
+                loggedOutItems={[
+                    {
+                        link: "/login",
+                        text: "Login",
+                    },
+                    {
+                        link: "/register",
+                        text: "Register",
+                    },
+                ]}
+            />
             {children}
-            <MobileNavigation />
+            <BottomNavigation />
         </div>
     );
 };

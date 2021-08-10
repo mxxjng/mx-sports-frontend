@@ -1,7 +1,7 @@
 import Head from "next/head";
 
-import Layout from "../components/layout";
-import Timer from "../components/timer";
+import Layout from "../components/Layout";
+import Timer from "../components/Timer";
 
 export default function TimerPage() {
     return (
