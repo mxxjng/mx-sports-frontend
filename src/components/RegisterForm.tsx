@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import Input from "./Form/Input";
 
+/**
+ * Registration Component
+ * @param {Function} registerUser
+ * @returns {JSX.Element}
+ */
 const RegisterForm = ({ registerUser }) => {
     const [formData, setFormData] = useState({
         email: "",

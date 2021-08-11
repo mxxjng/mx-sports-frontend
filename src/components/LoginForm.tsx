@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import Input from "./Form/Input";
 
+/**
+ * Login Component
+ * @param {Function} loginUser
+ * @returns {JSX.Element}
+ */
 const LoginForm = ({ loginUser }) => {
     const [formData, setFormData] = useState({
         email: "",

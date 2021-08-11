@@ -16,6 +16,10 @@ interface DataArray {
     value: number | null;
 }
 
+/**
+ * Component that shows a Linegraph
+ * @returns {JSX.Element}
+ */
 const Chart: React.FC<ChartProps> = ({
     data,
     label,

@@ -6,7 +6,7 @@ type TimerProps = {
 };
 
 /**
- * A Component that counts down from a given time
+ * A Component that counts down from a given time.
  * @param {number} timerTime the time of the timer in seconds
  * @returns {JSX.Element} Countown timer Button
  * @example <Timer timerTime={180} />

@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * Time Icon component
+ * @returns {JSX.Element}
+ */
 const TimeIcon = () => {
     return (
         <svg
