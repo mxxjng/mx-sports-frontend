@@ -8,6 +8,12 @@
 $ npm install
 ```
 
+## Starting Storybook
+
+```bash
+$ npm run storybook
+```
+
 ## Getting Started
 
 First, run the development server:

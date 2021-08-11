@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
 
-interface Props {
+interface ChartProps {
     data: Array<DataArray>;
     label: string;
     minValue: number;
@@ -16,7 +16,7 @@ interface DataArray {
     value: number | null;
 }
 
-const Chart: React.FC<Props> = ({
+const Chart: React.FC<ChartProps> = ({
     data,
     label,
     minValue,
@@ -24,7 +24,7 @@ const Chart: React.FC<Props> = ({
     height = 600,
     pointStyle = "circle",
 }) => {
-    const d = (canvas) => {
+    const prepareData = (canvas) => {
         const ctx = canvas.getContext("2d");
         const gradient = ctx.createLinearGradient(0, 0, 0, height);
         gradient.addColorStop(0, "rgba(118, 104, 203, 0.2)");
@@ -53,7 +53,7 @@ const Chart: React.FC<Props> = ({
             <div className="">
                 <Line
                     type
-                    data={d}
+                    data={prepareData}
                     height={height}
                     options={{
                         plugins: {
@@ -99,28 +99,3 @@ const Chart: React.FC<Props> = ({
     );
 };
 export default Chart;
-
-/*
-            scales: {
-              yAxes: {
-                ticks: {
-                  fontColor: 'green',
-                },
-                grid: {
-                  color: '#1A1C24',
-                  borderDash: [2, 4],
-                },
-                min: minValue,
-                max: maxValue,
-              },
-              xAxes: {
-                ticks: {
-                  fontColor: 'green',
-                },
-                grid: {
-                  color: '#24252F',
-                  borderDash: [2, 4],
-                },
-              },
-            },
-            */

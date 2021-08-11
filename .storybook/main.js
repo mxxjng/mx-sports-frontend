@@ -3,7 +3,7 @@ const path = require("path");
 const toPath = (_path) => path.join(process.cwd(), _path);
 
 module.exports = {
-    stories: ["../src/stories/**/*.story.@(ts|tsx|js|jsx|mdx)"],
+    stories: ["../src/**/*.stories.@(ts|tsx|js|jsx)"],
     addons: [
         "@storybook/addon-links",
         "@storybook/addon-essentials",
